@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">verifier</string>
+    <string name="title_activity_main">verifier</string>
+    <string name="package_name">eu.forkbomb.didroom.verifier</string>
+    <string name="custom_url_scheme">eu.forkbomb.didroom.verifier</string>
+</resources>
