@@ -26,7 +26,7 @@ Then print data
 		await PushNotifications.addListener('registration', async (token) => {
 			tok = token.value;
 			const text = JSON.stringify({
-				url: 'http://localhost:3000',
+				url: 'http://192.168.1.36:3000/verify-credential',
 				name: 'over18',
 				issuedBy: 'ItGov',
 				registrationToken: token.value
@@ -89,6 +89,6 @@ Then print data
 			<img src={qr.result.qrcode} alt="qrCode" class="w-full pt-20" />
 		{/if}
 	</div>
-	{JSON.stringify(incomingNotification)}
-	<ion-input value={tok}></ion-input>
+	<!-- {JSON.stringify(incomingNotification)} -->
+	<!-- <ion-input value={tok}></ion-input> -->
 </ion-content>
