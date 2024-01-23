@@ -50,13 +50,13 @@ jobs:
           KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
         with:
           lane: alpha
-      - run: mv release noctule.apk
+      - run: mv release verifier.apk
       - name: upload binary artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wallet
+          name: verifier
           path: |
-            release/wallet.apk
+            release/verifier.apk
 
   semantic-release:
     permissions:
@@ -107,12 +107,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: |
-            wallet-release
+            release
       - name: relase all binary artifacts
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            wallet-release/wallet/*
+            release/verifier/*
           draft: false
           prerelease: false
           fail_on_unmatched_files: true
