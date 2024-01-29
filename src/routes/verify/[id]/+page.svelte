@@ -8,6 +8,8 @@
 	import { onMount } from 'svelte';
 	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
 
+	export let data:any
+
 	let qr: any;
 	let error: string;
 	let tok: string;
@@ -27,8 +29,8 @@ Then print data
 			tok = token.value;
 			const text = JSON.stringify({
 				url: 'http://192.168.1.36:3000/verify-credential',
-				name: 'over18',
-				issuedBy: 'ItGov',
+				name: data.credential.name,
+				issuedBy: data.credential.issuer,
 				registrationToken: token.value
 			});
 			qr = await slangroom.execute(scriptCreate, {
@@ -89,6 +91,4 @@ Then print data
 			<img src={qr.result.qrcode} alt="qrCode" class="w-full pt-20" />
 		{/if}
 	</div>
-	<!-- {JSON.stringify(incomingNotification)} -->
-	<!-- <ion-input value={tok}></ion-input> -->
 </ion-content>
