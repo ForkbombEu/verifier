@@ -62,7 +62,7 @@
 		"@fontsource/poppins": "^5.0.8",
 		"@ionic/core": "^7.4.3",
 		"@slangroom/core": "^1.10.1",
-		"@slangroom/http": "^1.6.0",
+		"@slangroom/http": "^1.10.1",
 		"@slangroom/qrcode": "^1.10.1",
 		"ajv": "^8.12.0",
 		"ajv-formats": "^2.1.1",
