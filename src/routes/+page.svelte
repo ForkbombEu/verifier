@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Logo from '$lib/components/atoms/Logo.svelte';
-	import Card from '$lib/components/molecules/Card.svelte';
-	import fakeCredentials from '$lib/fakeCredentials';
 	import { getServices } from '$lib/slangroom/services';
 
 
@@ -26,7 +24,7 @@
 		{@const services = res.result.items}
 		<div class="flex flex-col gap-2">
 			{#each services as service}
-				<d-credential-service name={service.name} issuer={service.issuer} href={`/verify/${service.id}`} />
+				<d-credential-service name={service.name} issuer={service.issuer} href={`${service.id}/credential-detail`} />
 			{/each}
 		</div>
 	{/await}
