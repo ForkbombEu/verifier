@@ -39,14 +39,14 @@ dependencies:
     specifier: ^7.4.3
     version: 7.4.3
   '@slangroom/core':
-    specifier: ^1.10.1
-    version: 1.10.1(zenroom@4.0.0)
+    specifier: ^1.13.0
+    version: 1.13.0(zenroom@4.0.0)
   '@slangroom/http':
-    specifier: ^1.10.1
-    version: 1.10.1(zenroom@4.0.0)
+    specifier: ^1.13.0
+    version: 1.13.0(zenroom@4.0.0)
   '@slangroom/qrcode':
-    specifier: ^1.10.1
-    version: 1.10.1(zenroom@4.0.0)
+    specifier: ^1.13.0
+    version: 1.13.0(zenroom@4.0.0)
   ajv:
     specifier: ^8.12.0
     version: 8.12.0
@@ -69,7 +69,7 @@ dependencies:
 devDependencies:
   '@capacitor/assets':
     specifier: ^3.0.4
-    version: 3.0.4(@types/node@20.11.10)(typescript@5.0.2)
+    version: 3.0.4(@types/node@20.11.15)(typescript@5.0.2)
   '@capacitor/cli':
     specifier: 5.4.2
     version: 5.4.2
@@ -141,7 +141,7 @@ devDependencies:
     version: 5.0.2
   vite:
     specifier: ^4.4.12
-    version: 4.4.12(@types/node@20.11.10)
+    version: 4.4.12(@types/node@20.11.15)
   vitest:
     specifier: ^0.34.6
     version: 0.34.6
@@ -244,8 +244,8 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /@babel/helper-create-class-features-plugin@7.23.9(@babel/core@7.23.9):
-    resolution: {integrity: sha512-B2L9neXTIyPQoXDm+NtovPvG6VOLWnaXu3BIeVDWwdKFgG30oNa6CqVGiJPDWQwIAK49t9gnQI9c6K6RzabiKw==}
+  /@babel/helper-create-class-features-plugin@7.23.10(@babel/core@7.23.9):
+    resolution: {integrity: sha512-2XpP2XhkXzgxecPNEEK8Vz8Asj9aRxt08oKOqtiZoqV2UGZ5T+EkyP9sXQ9nwMxBIG34a7jmasVqoMop7VdPUw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -719,7 +719,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.23.9
-      '@babel/helper-create-class-features-plugin': 7.23.9(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
       '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
@@ -730,7 +730,7 @@ packages:
       '@babel/core': ^7.12.0
     dependencies:
       '@babel/core': 7.23.9
-      '@babel/helper-create-class-features-plugin': 7.23.9(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.9)
     dev: true
@@ -1047,7 +1047,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.23.9
-      '@babel/helper-create-class-features-plugin': 7.23.9(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
       '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
@@ -1059,7 +1059,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.9
       '@babel/helper-annotate-as-pure': 7.22.5
-      '@babel/helper-create-class-features-plugin': 7.23.9(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.9)
     dev: true
@@ -1354,7 +1354,7 @@ packages:
       '@capacitor/core': 5.4.2
     dev: false
 
-  /@capacitor/assets@3.0.4(@types/node@20.11.10)(typescript@5.0.2):
+  /@capacitor/assets@3.0.4(@types/node@20.11.15)(typescript@5.0.2):
     resolution: {integrity: sha512-9t/u2i9vSEWDfarzDJmQEgi07Tozyw2mKZYTkybb2Zkc8ufqR0S6ZzDBmWbsTtOTVwRr0uU9Rx3c8AVbA1xDtA==}
     engines: {node: '>=10.3.0'}
     hasBin: true
@@ -1362,7 +1362,7 @@ packages:
       '@capacitor/cli': 5.4.2
       '@ionic/utils-array': 2.1.6
       '@ionic/utils-fs': 3.1.7
-      '@trapezedev/project': 7.0.10(@types/node@20.11.10)(typescript@5.0.2)
+      '@trapezedev/project': 7.0.10(@types/node@20.11.15)(typescript@5.0.2)
       commander: 8.3.0
       debug: 4.3.4
       fs-extra: 10.1.0
@@ -2243,8 +2243,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@slangroom/core@1.10.1(zenroom@4.0.0):
-    resolution: {integrity: sha512-2O0Xlbuk/EP74vMZNtfLGoJJJGc0G5ut6FE4T9AbZNljno98vqDXWh0HAnxuBtqbUxG6k03uLOWSAxBGNa5aAg==}
+  /@slangroom/core@1.13.0(zenroom@4.0.0):
+    resolution: {integrity: sha512-RRocga8WaaHnxcs5RJVab9JEEUEtxAoCjiLzt3Q8yDLNv7FQJ5V5iAlK+U1zADpc4kzNbVe9jF6xaSp1tLkQrg==}
     dependencies:
       '@slangroom/deps': 1.9.5(zenroom@4.0.0)
       '@slangroom/ignored': 1.9.6(zenroom@4.0.0)
@@ -2262,10 +2262,10 @@ packages:
       zenroom: 4.0.0
     dev: false
 
-  /@slangroom/http@1.10.1(zenroom@4.0.0):
-    resolution: {integrity: sha512-z8zAi/wyQLcz1CdhgecNIo77rGh+3YnS38TRHQlgSDRgBmZaDVLICx2sol2iEfk3zzceJk6hl1C0vb9fWBToEQ==}
+  /@slangroom/http@1.13.0(zenroom@4.0.0):
+    resolution: {integrity: sha512-P4bSJMuijjlkXitOggyjydO6LaH/YbpoyHWDHXZxTzy9tzfGZZn+6QB12VgFYAw0wLFGJXtbZnHYo90ZZJyPnQ==}
     dependencies:
-      '@slangroom/core': 1.10.1(zenroom@4.0.0)
+      '@slangroom/core': 1.13.0(zenroom@4.0.0)
       '@slangroom/shared': 1.9.6(zenroom@4.0.0)
       axios: 1.6.7
     transitivePeerDependencies:
@@ -2282,10 +2282,10 @@ packages:
       - zenroom
     dev: false
 
-  /@slangroom/qrcode@1.10.1(zenroom@4.0.0):
-    resolution: {integrity: sha512-23uvjFYthfLRE1RWpkdsfowcjiT0TURIAnSyh8rdg0e8fyXVoHgM4atGevZAeWZ1guyTA5+51UkeMZgTcesgAg==}
+  /@slangroom/qrcode@1.13.0(zenroom@4.0.0):
+    resolution: {integrity: sha512-OAXcgNVhFZE8GCTCn/d/t/L9j5AoErRSoD+jHE0pTHTGuxoK+bwsNiXoGfKl7t2jybRUJ9chEFSCC4EpSI4qNw==}
     dependencies:
-      '@slangroom/core': 1.10.1(zenroom@4.0.0)
+      '@slangroom/core': 1.13.0(zenroom@4.0.0)
       qrcode: 1.5.3
     transitivePeerDependencies:
       - zenroom
@@ -2350,7 +2350,7 @@ packages:
       sirv: 2.0.4
       svelte: 4.0.5
       undici: 5.22.1
-      vite: 4.4.12(@types/node@20.11.10)
+      vite: 4.4.12(@types/node@20.11.15)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2366,7 +2366,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.0.5)(vite@4.4.12)
       debug: 4.3.4
       svelte: 4.0.5
-      vite: 4.4.12(@types/node@20.11.10)
+      vite: 4.4.12(@types/node@20.11.15)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2385,7 +2385,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.0.5
       svelte-hmr: 0.15.3(svelte@4.0.5)
-      vite: 4.4.12(@types/node@20.11.10)
+      vite: 4.4.12(@types/node@20.11.15)
       vitefu: 0.2.5(vite@4.4.12)
     transitivePeerDependencies:
       - supports-color
@@ -2395,7 +2395,7 @@ packages:
     resolution: {integrity: sha512-k822Is3jGroqOTKF0gAFm80LmhFJWBAyZvNtyuXq6uQUzDDe2fj/gHwixP6VFzlpaWKLP7IuR609Xv8gwJCXyg==}
     dev: true
 
-  /@trapezedev/project@7.0.10(@types/node@20.11.10)(typescript@5.0.2):
+  /@trapezedev/project@7.0.10(@types/node@20.11.15)(typescript@5.0.2):
     resolution: {integrity: sha512-UjwsStjhHq/+D1bWREmFDoyKql+qFIgJX93zQLg7R6CyWZUdtlGP2hU3l7tsVRtjJBVXpVu5mj8tdwJJoABO3A==}
     dependencies:
       '@ionic/utils-fs': 3.1.7
@@ -2420,7 +2420,7 @@ packages:
       replace: 1.2.2
       tempy: 1.0.1
       tmp: 0.2.1
-      ts-node: 10.9.2(@types/node@20.11.10)(typescript@5.0.2)
+      ts-node: 10.9.2(@types/node@20.11.15)(typescript@5.0.2)
       xcode: 3.0.1
       xml-js: 1.6.11
       xpath: 0.0.32
@@ -2492,6 +2492,12 @@ packages:
       undici-types: 5.26.5
     dev: true
 
+  /@types/node@20.11.15:
+    resolution: {integrity: sha512-gscmuADZfvNULx1eyirVbr3kVOVZtpQtzKMCZpeSZcN6MfbkRXAR4s9/gsQ4CzxLHw6EStDtKLNtSDL3vbq05A==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
     dev: true
@@ -2503,7 +2509,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 20.11.10
+      '@types/node': 20.11.15
     dev: true
 
   /@types/slice-ansi@4.0.0:
@@ -2799,8 +2805,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /available-typed-arrays@1.0.5:
-    resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
+  /available-typed-arrays@1.0.6:
+    resolution: {integrity: sha512-j1QzY8iPNPG4o4xmO3ptzpRxTciqD3MgEHtifP/YnJpIo58Xu+ne4BejlbkuaLfXn/nz6HFiw29bLpj2PNMdGg==}
     engines: {node: '>= 0.4'}
     dev: true
 
@@ -3814,7 +3820,7 @@ packages:
     dependencies:
       array-buffer-byte-length: 1.0.0
       arraybuffer.prototype.slice: 1.0.2
-      available-typed-arrays: 1.0.5
+      available-typed-arrays: 1.0.6
       call-bind: 1.0.5
       es-set-tostringtag: 2.0.2
       es-to-primitive: 1.2.1
@@ -4877,7 +4883,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.10
+      '@types/node': 20.11.15
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -7444,7 +7450,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node@10.9.2(@types/node@20.11.10)(typescript@5.0.2):
+  /ts-node@10.9.2(@types/node@20.11.15)(typescript@5.0.2):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -7463,7 +7469,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.11.10
+      '@types/node': 20.11.15
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
@@ -7556,7 +7562,7 @@ packages:
     resolution: {integrity: sha512-RD97prjEt9EL8YgAgpOkf3O4IF9lhJFr9g0htQkm0rchFp/Vx7LW5Q8fSXXub7BXAODyUQohRMyOc3faCPd0hg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      available-typed-arrays: 1.0.5
+      available-typed-arrays: 1.0.6
       call-bind: 1.0.5
       for-each: 0.3.3
       has-proto: 1.0.1
@@ -7759,7 +7765,7 @@ packages:
       debug: 4.3.4
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 4.4.12(@types/node@20.11.10)
+      vite: 4.4.12(@types/node@20.11.15)
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
@@ -7802,6 +7808,42 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /vite@4.4.12(@types/node@20.11.15):
+    resolution: {integrity: sha512-KtPlUbWfxzGVul8Nut8Gw2Qe8sBzWY+8QVc5SL8iRFnpnrcoCaNlzO40c1R6hPmcdTwIPEDkq0Y9+27a5tVbdQ==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 20.11.15
+      esbuild: 0.18.20
+      postcss: 8.4.31
+      rollup: 3.29.4
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
   /vitefu@0.2.5(vite@4.4.12):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
@@ -7810,7 +7852,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.12(@types/node@20.11.10)
+      vite: 4.4.12(@types/node@20.11.15)
     dev: true
 
   /vitest@0.34.6:
@@ -7918,7 +7960,7 @@ packages:
     resolution: {integrity: sha512-P5Nra0qjSncduVPEAr7xhoF5guty49ArDTwzJ/yNuPIbZppyRxFQsRCWrocxIY+CnMVG+qfbU2FmDKyvSGClow==}
     engines: {node: '>= 0.4'}
     dependencies:
-      available-typed-arrays: 1.0.5
+      available-typed-arrays: 1.0.6
       call-bind: 1.0.5
       for-each: 0.3.3
       gopd: 1.0.1
