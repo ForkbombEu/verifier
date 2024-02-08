@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { setupIonicBase } from 'ionic-svelte';
-	import '@didroom/components/dist/didroom-components/didroom-components.css';
 
 	setupIonicBase();
 
