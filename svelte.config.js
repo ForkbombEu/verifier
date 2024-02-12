@@ -16,7 +16,7 @@ const config = {
 		alias: {
 			// $ui: './src/components',
 			$paraglide: './src/paraglide',
-			'$paraglide/**': './src/paraglide/**'
+			'$paraglide/*': './src/paraglide/*'
 		}
 	}
 };
