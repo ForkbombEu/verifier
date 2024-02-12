@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "918939182691",
+    "project_id": "didroom-verifier",
+    "storage_bucket": "didroom-verifier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918939182691:android:31c521f2c5b1b6996efa56",
+        "android_client_info": {
+          "package_name": "eu.forkbomb.didroom.verifier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1SFYxD2V2vFagZ7mrinOM36myw6y_JEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,38 +1,15 @@
-# create-svelte
+## Download the latest test release
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+![qr](https://github.com/ForkbombEu/verifier/assets/10379/32428fe8-45f5-4266-aa97-bd1a90754e93)
 
-## Creating a project
+### Notes
 
-If you're seeing this, you've probably already done this step. Congrats!
+**Path bug**
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+If you get an error like:
 
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/Users/<HOME_NAME>/Documents/GitHub/wallet/android/local.properties'.
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+duplicate `android/local.properties.example` as `android/local.properties` and set correct path
