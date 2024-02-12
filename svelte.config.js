@@ -12,10 +12,12 @@ const config = {
 			assets: 'build',
 			fallback: 'index.html',
 			precompress: false
-		})
-		// alias: {
-		// 	$ui: './src/components'
-		// }
+		}),
+		alias: {
+			// $ui: './src/components',
+			$paraglide: './src/paraglide',
+			'$paraglide/**': './src/paraglide/**'
+		}
 	}
 };
 

@@ -7,6 +7,9 @@
 	import '@fontsource/poppins';
 	import 'ionic-svelte/components/all';
 	import '../theme/variables.css';
+
+	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
+	import { i18n } from '$lib/i18n';
 </script>
 
 <svelte:head>
@@ -24,6 +27,8 @@
 	/>
 </svelte:head>
 
-<ion-app>
-	<slot />
-</ion-app>
+<ParaglideJS {i18n}>
+	<ion-app>
+		<slot />
+	</ion-app>
+</ParaglideJS>
