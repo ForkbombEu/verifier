@@ -1,7 +1,0 @@
-{
-	"name": "verifier",
-	"integrations": {
-		"capacitor": {}
-	},
-	"type": "custom"
-}
