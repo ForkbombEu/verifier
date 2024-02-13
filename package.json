@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",
-		"build": "vite build",
+		"build": "paraglide-js compile --project ./project.inlang && vite build",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -18,9 +18,12 @@
 		"ios": "ionic cap run ios -l",
 		"android": "ionic cap run android -l --external",
 		"apk": "ionic capacitor copy android && cd android && ./gradlew assembleDebug && ./gradlew installDebug && cd ..",
-		"web": "ionic serve"
+		"web": "ionic serve",
+		"postinstall": "paraglide-js compile --project ./project.inlang"
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "1.2.5",
+		"@inlang/paraglide-js-adapter-sveltekit": "^0.4.0",
 		"@playwright/test": "^1.28.1",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^11.1.0",
@@ -56,6 +59,7 @@
 		"@capacitor/assets": "^3.0.4",
 		"@capacitor/cli": "^5.7.0",
 		"@capacitor/core": "^5.7.0",
+		"@capacitor/device": "^5.0.7",
 		"@capacitor/haptics": "^5.0.7",
 		"@capacitor/ios": "^5.7.0",
 		"@capacitor/keyboard": "^5.0.8",
