@@ -7,7 +7,7 @@
 	import { qrcode } from '@slangroom/qrcode';
 	import { onMount } from 'svelte';
 	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
-	import Header from '$lib/components/atoms/Header.svelte';
+	import Header from '$lib/components/molecules/Header.svelte';
 
 	export let data: any;
 
