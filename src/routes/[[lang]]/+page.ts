@@ -1,5 +1,5 @@
 //
-import { r, type Locale, i18n, goto } from '$lib/i18n';
+import { r, type Locale } from '$lib/i18n';
 import { redirect } from '@sveltejs/kit';
 import { getLanguagePreference} from '$lib/preferences/lang';
 import { availableLanguageTags } from '$paraglide/runtime';

@@ -15,6 +15,6 @@ const setInitialLanguage = async () => {
 	}
 };
 
-export const load = async ({ params }) => {
+export const load = async () => {
 	await setInitialLanguage();
 };

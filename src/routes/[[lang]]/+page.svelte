@@ -5,7 +5,7 @@
 
 
 </script>
-<Header backButton={false}>VERIFIER</Header>
+<Header backButton={false}>{m.VERIFIER()}</Header>
 <ion-content fullscreen class="ion-padding space-y-10">
 	{#await getServices()}
 		<ion-spinner />
