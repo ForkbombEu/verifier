@@ -1,7 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-	import { goto, i18n } from '$lib/i18n';
-	import { availableLanguageTags } from '$paraglide/runtime';
 	import { chevronBackOutline, ellipsisHorizontal } from 'ionicons/icons';
 	import Settings from './Settings.svelte';
 	export let backButton = true;
@@ -12,7 +9,7 @@
 	//TODO: fix background color with actual token
 </script>
 
-<ion-header class="bg-[#243151]">
+<ion-header class="bg-primary">
 	<ion-toolbar>
 		{#if backButton}
 			<ion-buttons slot="start">
