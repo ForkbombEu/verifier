@@ -7,7 +7,8 @@
 	import { qrcode } from '@slangroom/qrcode';
 	import { onMount } from 'svelte';
 	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
-	import Header from '$lib/components/atoms/Header.svelte';
+	import Header from '$lib/components/molecules/Header.svelte';
+	import { m } from '$lib/i18n';
 
 	export let data: any;
 
@@ -72,9 +73,8 @@ Then print data
 	addListeners();
 </script>
 
-<Header>VERIFICATION QR</Header>
+<Header>{m.VERIFICATION_QR()}</Header>
 <ion-content fullscreen class="ion-padding">
-	<ion-button href="/">back</ion-button>
 	<div class="flex flex-col">
 		{#if incomingNotification}
 			<ion-icon

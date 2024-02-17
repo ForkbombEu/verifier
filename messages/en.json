@@ -1,0 +1,8 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"Verify_credential": "Verify credential",
+	"VERIFICATION_QR": "VERIFICATION QR",
+	"Generate_QR": "Generate QR",
+	"CREDENTIAL_DETAIL": "CREDENTIAL DETAIL",
+	"VERIFIER": "VERIFIER"
+}
