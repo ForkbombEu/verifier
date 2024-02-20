@@ -29,8 +29,9 @@ Then print data
 	const addListeners = async () => {
 		await PushNotifications.addListener('registration', async (token) => {
 			tok = token.value;
+		
 			const text = JSON.stringify({
-				url: 'http://192.168.1.36:3000/verify-credential',
+				url: 'http://oracle1.zenswarm.forkbomb.eu:3366/verify-credential',
 				name: data.credential.name,
 				issuedBy: data.credential.issuer,
 				registrationToken: token.value
