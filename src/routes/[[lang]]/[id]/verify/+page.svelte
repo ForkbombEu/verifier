@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Logo from '$lib/components/atoms/Logo.svelte';
 	import { PushNotifications } from '@capacitor/push-notifications';
 	import { Slangroom } from '@slangroom/core';
 	import { qrcode } from '@slangroom/qrcode';
@@ -9,6 +8,7 @@
 	import { m } from '$lib/i18n';
 	import dayjs from 'dayjs';
 	import { Capacitor } from '@capacitor/core';
+	import Countdown from '$lib/components/organism/Countdown.svelte';
 
 	export let data: any;
 
@@ -56,11 +56,6 @@ Then print data
 		}
 		return result;
 	}
-	onMount(() => {
-		const interval = setInterval(() => registerQr, 5000);
-
-		return () => clearInterval(interval);
-	});
 
 	const registerQr = async () => {
 		id = makeid(5);
@@ -80,8 +75,6 @@ Then print data
 			}
 		});
 		qr = res.result.qrcode;
-		now = dayjs().unix();
-		interval = setInterval(updateTimer, 1000);
 		return qr;
 	};
 
@@ -99,29 +92,13 @@ Then print data
 
 		await PushNotifications.register();
 	};
-	//remember to uncomment before commit
+
 	onMount(async () => {
 		await registerNotifications();
 		await addListeners();
 	});
 	registerNotifications();
 	addListeners();
-
-	let now = dayjs().unix();
-
-	const expirationInterval = 300
-
-	$: count = Math.round(generationDate.unix() + expirationInterval - now);
-	$: h = Math.floor(count / 3600);
-	$: mi = Math.floor((count - h * 3600) / 60);
-	$: s = count - h * 3600 - mi * 60;
-
-	function updateTimer() {
-		now = dayjs().unix();
-	}
-
-	let interval: NodeJS.Timeout;
-	$: count <= 0 && clearInterval(interval);
 </script>
 
 <Header>{m.VERIFICATION_QR()}</Header>
@@ -155,7 +132,7 @@ Then print data
 			</div>
 			<d-button color="accent" expand on:click={registerQr}>RE-GENERATE</d-button>
 		{/if}
-		
+
 		<!-- for web test no tok provided-->
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr()}
@@ -178,17 +155,7 @@ Then print data
 			{/await}
 		{/if}
 		<!-- end for web -->
-		
-		<div class="flex flex-col items-center justify-center gap-1">
-			{#if count > 0}
-				<d-text size="m">Expires in:</d-text>
-				<div class="flex flex-row items-center justify-center gap-1">
-					<d-heading size="s">{mi}m</d-heading>
-					<d-heading size="s">{s}s</d-heading>
-				</div>
-			{:else}
-				<d-heading class="text-error" size="m">Expired</d-heading>
-			{/if}
-		</div>
+
+		<Countdown initial={generationDate.unix()} />
 	</div>
 </ion-content>
