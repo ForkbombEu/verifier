@@ -117,7 +117,6 @@ Then print data
 	$: s = count - h * 3600 - mi * 60;
 
 	function updateTimer() {
-		console.log('ll: update', count);
 		now = dayjs().unix();
 	}
 
@@ -184,11 +183,11 @@ Then print data
 			{#if count > 0}
 				<d-text size="m">Expires in:</d-text>
 				<div class="flex flex-row items-center justify-center gap-1">
-					<d-text size="m">{mi}m</d-text>
-					<d-text size="m">{s}s</d-text>
+					<d-heading size="s">{mi}m</d-heading>
+					<d-heading size="s">{s}s</d-heading>
 				</div>
 			{:else}
-				<d-text size="m">Expired</d-text>
+				<d-heading class="text-error" size="m">Expired</d-heading>
 			{/if}
 		</div>
 	</div>
