@@ -18,7 +18,7 @@
 	const form = createForm({
 		schema,
 		onSubmit: async ({ form }) => {
-			userEmailStore.set({ email: form.data.email, registration: false });
+			userEmailStore.set({ email: form.data.email, registration: true });
 			await goto('/login/questions');
 		}
 	});

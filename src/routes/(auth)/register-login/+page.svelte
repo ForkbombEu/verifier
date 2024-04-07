@@ -1,6 +1,6 @@
 <script>
 	import AppDetails from '$lib/components/AppDetails.svelte';
-	import { m, r } from '$lib/i18n';
+	import { r } from '$lib/i18n';
 </script>
 
 <div class="flex h-screen flex-col place-content-between p-4 pt-32">
