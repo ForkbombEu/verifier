@@ -14,6 +14,7 @@
 	import { generateDid, generateSignroomUser } from '../../_lib';
 	import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 	import { getLottieAnimation } from '$lib/getLottieAnimation';
+	import { log } from '$lib/log';
 
 	//
 
@@ -60,6 +61,7 @@
 			try {
 				loading = true;
 				const formattedAnswers = convertUndefinedToNullString(form.data);
+				log(userEmail, registration)
 				const keypair = await generateKeypair(userEmail, formattedAnswers as UserChallengesAnswers);
 
 				await setKeypairPreference(keypair);
@@ -82,6 +84,7 @@
 				 */
 			} catch (e) {
 				loading = false;
+				log(e)
 				throw new Error('KEYPAIR_GENERATION_ERROR');
 			}
 		}

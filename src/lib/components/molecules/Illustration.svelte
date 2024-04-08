@@ -29,12 +29,8 @@
 		| 'logo-hand'
 		| 'pidgeon'
 		| 'search';
-	const suffix = isDark ? '-dark' : '';
 </script>
 
-<!-- <div class="absolute top-0 w-full">
-	<img src={`/src/lib/assets/${img}${suffix}.svg`} alt={img} class="mx-auto w-64" />
-</div> -->
 {#if img === 'bell'}
 	<img src={isDark ? bellDark : bell} alt={img} class="absolute top-0 w-full" />
 {:else if img === 'card-cloud'}

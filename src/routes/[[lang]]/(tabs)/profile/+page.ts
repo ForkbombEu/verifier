@@ -8,7 +8,7 @@ import { getPublicKeysFromKeypair } from '$lib/keypairoom';
 
 
 
-
+//@ts-ignore
 const slangroom = new Slangroom(pocketbase);
 
 const getKeys = async () => {

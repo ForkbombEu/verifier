@@ -3,7 +3,7 @@
 	import { m } from '$lib/i18n';
 	import chat from '$lib/assets/chat.svg';
 
-	export let data;
+	export let data
 
 	const { orgs, keys, user, did, logged } = data;
 </script>
