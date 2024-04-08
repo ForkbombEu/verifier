@@ -3,9 +3,9 @@
 	import { goto, m, r } from '$lib/i18n';
 	import { regenerateKeypair } from '$lib/keypairoom';
 	import { setKeypairPreference } from '$lib/preferences/keypair.js';
-	// import { unlockApp } from '$lib/preferences/locked.js';
 	import { z } from 'zod';
 	import { generateDid } from '../../_lib/index.js';
+	import { unlockApp } from '$lib/preferences/locked.js';
 
 	//
 
@@ -66,7 +66,7 @@
 			</FormError>
 		</div>
 		<div class="flex flex-col gap-6">
-			<d-button role="button" expand type="submit" tabindex={0}>{m.Login()}</d-button>
+			<d-button role="button" expand type="submit" tabindex={0}>Login</d-button>
 
 			<d-button color="outline" href={r('/login/questions')} role="button" expand>
 				{m.KEYPAIR_RECOVERY()}

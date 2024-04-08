@@ -43,7 +43,6 @@ export const generateSignroomUser = async (email: string) => {
 		data
 	});
 
-	await setUser(res.result.login_output?.record.id, email);
 	
 	return res.result.output;
 };
@@ -93,6 +92,7 @@ export const generateDid = async (email: string) => {
 		data
 	})) as unknown as DIDResponse;
 
+	await setUser(res.result.login_output?.record.id, email);
 	await setDIDPreference(res.result.output.did);
 
 	return res.result.output;
