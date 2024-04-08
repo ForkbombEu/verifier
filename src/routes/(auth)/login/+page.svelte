@@ -31,7 +31,7 @@
 
 <div class="flex flex-col min-h-screen place-content-between">
 	<div class="grow">
-		<div class="relative min-h-[38vh]">
+		<div class="relative min-h-[50vh]">
 			<img
 				src={background}
 				class="w-full shrink-0 fill-[var(--highlight)] opacity-50"
