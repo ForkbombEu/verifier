@@ -2,8 +2,9 @@
 	import TabPage from '$lib/tabs/TabPage.svelte';
 	import { m } from '$lib/i18n';
 	import chat from '$lib/assets/chat.svg';
+	import { clearPreferences } from '$lib/preferences';
 
-	export let data
+	export let data;
 
 	const { orgs, keys, user, did, logged } = data;
 </script>
@@ -28,14 +29,23 @@
 						/>
 					{/each}
 				{/if}
-				<d-button href="/logout" class="mt-20">{'m.Logout()'}</d-button>
+				<d-button
+					href="/logout"
+					class="mt-20"
+					on:click={clearPreferences}
+					on:keydown={clearPreferences}
+					aria-hidden>Logout</d-button
+				>
 			</div>
 		{:else}
 			<img src={chat} alt="chat" class="w-1/2" />
 			<d-heading size="s" class="w-full text-center">Login as Verifier</d-heading>
-			<d-text class="w-full text-center">Get alerts on new activities and keep your account up-to-date.</d-text>
-			<d-button href="/register-login" class="mt-8" color="outline" expand>Login to get started -></d-button>
+			<d-text class="w-full text-center"
+				>Get alerts on new activities and keep your account up-to-date.</d-text
+			>
+			<d-button href="/register-login" class="mt-8" color="outline" expand
+				>Login to get started -></d-button
+			>
 		{/if}
-
 	</div>
 </TabPage>
