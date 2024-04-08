@@ -1,7 +1,11 @@
 PODS:
+  - AparajitaCapacitorBiometricAuth (7.2.0):
+    - Capacitor
   - Capacitor (5.7.0):
     - CapacitorCordova
   - CapacitorApp (5.0.7):
+    - Capacitor
+  - CapacitorClipboard (5.0.7):
     - Capacitor
   - CapacitorCordova (5.7.0)
   - CapacitorDevice (5.0.7):
@@ -18,8 +22,10 @@ PODS:
     - Capacitor
 
 DEPENDENCIES:
+  - "AparajitaCapacitorBiometricAuth (from `../../node_modules/.pnpm/@aparajita+capacitor-biometric-auth@7.2.0/node_modules/@aparajita/capacitor-biometric-auth`)"
   - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/app`)"
+  - "CapacitorClipboard (from `../../node_modules/.pnpm/@capacitor+clipboard@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/clipboard`)"
   - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios`)"
   - "CapacitorDevice (from `../../node_modules/.pnpm/@capacitor+device@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/device`)"
   - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/haptics`)"
@@ -29,10 +35,14 @@ DEPENDENCIES:
   - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/status-bar`)"
 
 EXTERNAL SOURCES:
+  AparajitaCapacitorBiometricAuth:
+    :path: "../../node_modules/.pnpm/@aparajita+capacitor-biometric-auth@7.2.0/node_modules/@aparajita/capacitor-biometric-auth"
   Capacitor:
     :path: "../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios"
   CapacitorApp:
     :path: "../../node_modules/.pnpm/@capacitor+app@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/app"
+  CapacitorClipboard:
+    :path: "../../node_modules/.pnpm/@capacitor+clipboard@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/clipboard"
   CapacitorCordova:
     :path: "../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios"
   CapacitorDevice:
@@ -49,8 +59,10 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/.pnpm/@capacitor+status-bar@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
+  AparajitaCapacitorBiometricAuth: 38edeb4249e0c85ba6103431d39777d868f7846c
   Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
   CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
+  CapacitorClipboard: 45e5e25f2271f98712985d422776cdc5a779cca1
   CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
   CapacitorDevice: fc91bdb484dc0e70755e9b621cd557afe642613a
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
@@ -59,6 +71,6 @@ SPEC CHECKSUMS:
   CapacitorPushNotifications: 2327900bc002f5ff49ee6d2231796d0635b4a1b0
   CapacitorStatusBar: f390fbb49b82ffb754ea4b3cf71dc8b048baf3e7
 
-PODFILE CHECKSUM: 82231b9454d64b691f9e0ded4ae0d2a8c599d375
+PODFILE CHECKSUM: 4c1f0083d32096867f9e337be2217734481962b5
 
 COCOAPODS: 1.13.0
