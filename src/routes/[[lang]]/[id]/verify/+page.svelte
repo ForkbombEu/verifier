@@ -1,18 +1,22 @@
 <script lang="ts">
-	import Logo from '$lib/components/atoms/Logo.svelte';
 	import { PushNotifications } from '@capacitor/push-notifications';
-	//@ts-ignore
 	import { Slangroom } from '@slangroom/core';
-	//@ts-ignore
 	import { qrcode } from '@slangroom/qrcode';
 	import { onMount } from 'svelte';
 	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
 	import Header from '$lib/components/molecules/Header.svelte';
 	import { m } from '$lib/i18n';
+	import dayjs from 'dayjs';
+	import { Capacitor } from '@capacitor/core';
+	import Countdown from '$lib/components/organism/Countdown.svelte';
 
 	export let data: any;
 
+	const { credential } = data;
+
 	let qr: any;
+	let id: string;
+	let generationDate = dayjs();
 	let error: string;
 	let tok: string;
 
@@ -29,18 +33,7 @@ Then print data
 	const addListeners = async () => {
 		await PushNotifications.addListener('registration', async (token) => {
 			tok = token.value;
-		
-			const text = JSON.stringify({
-				url: 'http://oracle1.zenswarm.forkbomb.eu:3366/verify-credential',
-				name: data.credential.name,
-				issuedBy: data.credential.issuer,
-				registrationToken: token.value
-			});
-			qr = await slangroom.execute(scriptCreate, {
-				data: {
-					text
-				}
-			});
+			await registerQr();
 		});
 
 		await PushNotifications.addListener('registrationError', (err) => {
@@ -52,7 +45,40 @@ Then print data
 			console.log('Push notification received: ', notification);
 		});
 	};
+	function makeid(length: number) {
+		let result = '';
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		const charactersLength = characters.length;
+		let counter = 0;
+		while (counter < length) {
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));
+			counter += 1;
+		}
+		return result;
+	}
 
+	const registerQr = async () => {
+		id = makeid(5);
+		generationDate = dayjs();
+
+		const text = JSON.stringify({
+			id,
+			tok,
+			url: 'http://oracle1.zenswarm.forkbomb.eu:3366/verify-credential',
+			name: data.credential.name,
+			issuedBy: data.credential.issuer
+		});
+
+		const res = await slangroom.execute(scriptCreate, {
+			data: {
+				text
+			}
+		});
+		qr = res.result.qrcode;
+		return qr;
+	};
+
+	//
 	const registerNotifications = async () => {
 		let permStatus = await PushNotifications.checkPermissions();
 
@@ -66,6 +92,7 @@ Then print data
 
 		await PushNotifications.register();
 	};
+
 	onMount(async () => {
 		await registerNotifications();
 		await addListeners();
@@ -76,14 +103,59 @@ Then print data
 
 <Header>{m.VERIFICATION_QR()}</Header>
 <ion-content fullscreen class="ion-padding">
-	<div class="flex flex-col">
+	<div class="flex flex-col justify-center gap-8 text-center">
+		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
+		<div class="flex w-full items-center justify-center gap-2 py-12">
+			<d-avatar size="m" src={credential.issuer.logo}></d-avatar>
+			<d-heading size="s">{credential.name}</d-heading>
+		</div>
 		{#if incomingNotification}
 			<ion-icon
 				icon={incomingNotification.data.message === 'ok' ? thumbsUpOutline : thumbsDownOutline}
 				class="mx-auto my-6 text-9xl"
 			></ion-icon>
 		{:else if qr}
-			<img src={qr.result.qrcode} alt="qrCode" class="w-full pt-20" />
+			<div
+				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
+			>
+				<img src={qr} alt="qrCode" class="w-full" />
+				<div class="flex flex-col items-center justify-center gap-1 px-2 py-4 text-center">
+					<d-text size="l" class="w-max">Session ID:</d-text>
+					<d-heading size="s">{id}</d-heading>
+					<d-text size="m"
+						>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
+					>
+					<d-text size="m"
+						>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
+					>
+				</div>
+			</div>
+			<d-button color="accent" expand on:click={registerQr}>RE-GENERATE</d-button>
 		{/if}
+
+		<!-- for web test no tok provided-->
+		{#if Capacitor.getPlatform() == 'web'}
+			{#await registerQr()}
+				<div
+					class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
+				>
+					<img src={qr} alt="qrCode" class="w-full" />
+					<div class="flex flex-col items-center justify-center gap-1 px-2 py-4 text-center">
+						<d-text size="l" class="w-max">Session ID:</d-text>
+						<d-heading size="s">{id}</d-heading>
+						<d-text size="m"
+							>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
+						>
+						<d-text size="m"
+							>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
+						>
+					</div>
+				</div>
+				<d-button color="accent" expand on:click={registerQr}>RE-GENERATE</d-button>
+			{/await}
+		{/if}
+		<!-- end for web -->
+
+		<Countdown initial={generationDate.unix()} />
 	</div>
 </ion-content>

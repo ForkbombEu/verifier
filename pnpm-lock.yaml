@@ -65,6 +65,9 @@ dependencies:
   '@vite-pwa/sveltekit':
     specifier: ^0.3.0
     version: 0.3.0(@sveltejs/kit@2.5.0)(vite-plugin-pwa@0.18.1)
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   ionic-svelte:
     specifier: ^0.5.82
     version: 0.5.82
@@ -4175,6 +4178,10 @@ packages:
 
   /dateformat@3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
+    dev: false
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@3.2.7(supports-color@5.5.0):

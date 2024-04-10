@@ -19,7 +19,7 @@
 	/>
 	<script
 		type="module"
-		src="https://cdn.jsdelivr.net/npm/@didroom/components@1.8/dist/didroom-components/didroom-components.esm.js"
+		src="https://cdn.jsdelivr.net/npm/@didroom/components@1.14/dist/didroom-components/didroom-components.esm.js"
 	></script>
 	<link
 		rel="stylesheet"
