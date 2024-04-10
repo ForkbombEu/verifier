@@ -26,7 +26,7 @@
 	$: {
 		initial;
 		expired = false;
-		now = dayjs.unix();
+		now = dayjs().unix();
 		interval = setInterval(updateTimer, 1000);
 	}
 </script>
