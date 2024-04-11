@@ -78,7 +78,6 @@ Then print data
 		return qr;
 	};
 
-	//
 	const registerNotifications = async () => {
 		let permStatus = await PushNotifications.checkPermissions();
 
@@ -106,8 +105,8 @@ Then print data
 	<div class="flex flex-col justify-center gap-8 text-center">
 		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
 		<div class="flex w-full items-center justify-center gap-2 py-12">
-			<d-avatar size="m" src={credential.issuer.logo}></d-avatar>
-			<d-heading size="s">{credential.name}</d-heading>
+			<!-- <d-avatar size="m" src={credential.credential_issuer.logo}></d-avatar> -->
+			<d-heading size="s">{credential.display_name}</d-heading>
 		</div>
 		{#if incomingNotification}
 			<ion-icon
