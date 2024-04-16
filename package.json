@@ -24,6 +24,7 @@
 	"devDependencies": {
 		"@inlang/paraglide-js": "1.2.5",
 		"@inlang/paraglide-js-adapter-sveltekit": "^0.4.0",
+		"@ionic/cli": "^7.2.0",
 		"@playwright/test": "^1.28.1",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^11.1.0",
