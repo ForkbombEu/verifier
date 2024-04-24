@@ -67,6 +67,7 @@
 		"@capacitor/preferences": "^5.0.7",
 		"@capacitor/push-notifications": "^5.1.1",
 		"@capacitor/status-bar": "^5.0.7",
+		"@fontsource-variable/gantari": "^5.0.14",
 		"@fontsource/poppins": "^5.0.8",
 		"@ionic/core": "^7.7.1",
 		"@slangroom/core": "^1.13.0",
