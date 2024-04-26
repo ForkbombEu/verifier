@@ -89,7 +89,6 @@ export const getVerificationFlow = async (id: string): Promise<VerificationFlow>
 				id
 			}
 		};
-        console.log(data);
 		const res = await slangroom.execute(getPbRecord, { data });
 		//@ts-expect-error output needs to be typed
 		return res.result?.output;

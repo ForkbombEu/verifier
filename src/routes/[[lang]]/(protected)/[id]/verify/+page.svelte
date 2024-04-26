@@ -14,6 +14,7 @@
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
 	import { backendUri } from '$lib/backendUri';
+	import { saveRuAndSid } from '$lib/preferences/sidRu';
 
 	export let data: any;
 
@@ -45,7 +46,6 @@
 	};
 
 	const registerQr = async (t: string) => {
-		// generationDate = dayjs();
 		const data = {
 			id: user.id,
 			template: verificationFlow.template,
@@ -56,13 +56,12 @@
 			registrationToken: t,
 			m: 'f'
 		};
-		console.log(data);
-
 		const res = await slangroom.execute(cardToQr, { data, keys: JSON.parse(cardToQrKeys) });
-
-		qr = res.result.qrcode;
-		id = res.result.sid as string;
-		console.log(res.result);
+		const result = res.result;
+		qr = result.qrcode;
+		id = result.sid as string;
+		await saveRuAndSid(result.sid as string, result.ru as string);
+		console.log(result);
 		return qr;
 	};
 
@@ -120,7 +119,7 @@
 					>RE-GENERATE</d-button
 				>
 			{/await}
-		<!-- end for web -->
+			<!-- end for web -->
 		{:else if incomingNotification}
 			<ion-icon
 				icon={incomingNotification.data.message === 'ok' ? thumbsUpOutline : thumbsDownOutline}
