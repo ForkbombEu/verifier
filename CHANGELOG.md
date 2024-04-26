@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/ForkbombEu/verifier/compare/v1.12.1...v1.12.2) (2024-04-26)
+
+
+### Bug Fixes
+
+* fix light color scheme ([95e4ed0](https://github.com/ForkbombEu/verifier/commit/95e4ed0a151d1e0896e5545ec2991f8a67250898))
+
 ## [1.12.1](https://github.com/ForkbombEu/verifier/compare/v1.12.0...v1.12.1) (2024-04-26)
 
 
