@@ -12,17 +12,17 @@
 
 :root {
 	--surface: #eeedf6;
-	--primary: #d6d2e5;
+	--primary: #d7d2e5;
 	--primary-text: #2d2d2d;
 	--secondary-text: #5d5d65;
-	--accent: #392260;
-	--on-accent: #d6d2e5;
-	--highlight: #ccc9dc;
+	--accent: #3a2260;
+	--on-accent: #d7d2e5;
+	--highlight: #cdc9dc;
 	--success: #279b48;
 	--warning: #e58600;
 	--error: #ee342b;
 	--statusbar: #000000;
-	--stroke: #9a8cb1;
+	--stroke: #9b8db1;
 	--ion-background-color: var(--surface);
 	--ion-text-color: var(--on);
 	--ion-tab-bar-background: var(--surface);
