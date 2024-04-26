@@ -1,10 +1,30 @@
 {
-  "repositoryUrl": "git@github.com:ForkbombEu/verifier.git",
-  "dryRun": false,
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-  ],
-  "branches": ["main"]
+	"repositoryUrl": "git@github.com:ForkbombEu/wallet.git",
+	"dryRun": false,
+	"plugins": [
+		"@semantic-release/commit-analyzer",
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/changelog",
+		[
+			"@semantic-release/npm",
+			{
+				"npmPublish": false
+			}
+		],
+		[
+			"@semantic-release/git",
+			{
+				"assets": [
+					"CHANGELOG.md",
+					"pnpm-lock.yaml",
+					"package.json"
+				],
+				"message": "chore(release): 🚀 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+			}
+		],
+		"@semantic-release/github"
+	],
+	"branches": [
+		"main"
+	]
 }
