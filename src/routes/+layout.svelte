@@ -5,6 +5,7 @@
 	setupIonicBase();
 
 	import '@fontsource/poppins';
+	import '@fontsource-variable/gantari';
 	import 'ionic-svelte/components/all';
 	import '../theme/variables.css';
 
