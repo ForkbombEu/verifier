@@ -73,6 +73,7 @@
 		"@fontsource/poppins": "^5.0.8",
 		"@ionic/core": "^7.7.1",
 		"@slangroom/core": "^1.27.6",
+		"@slangroom/helpers": "^1.27.6",
 		"@slangroom/http": "^1.13.0",
 		"@slangroom/pocketbase": "^1.28.2",
 		"@slangroom/qrcode": "^1.13.0",
@@ -86,7 +87,7 @@
 		"prettier-plugin-organize-imports": "^3.2.4",
 		"svelte-preprocess": "^5.1.3",
 		"sveltekit-superforms": "1.13",
-		"zenroom": "^4.12.0",
+		"zenroom": "^4.27.1",
 		"zod": "^3.23.4"
 	}
 }

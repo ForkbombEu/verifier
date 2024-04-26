@@ -1,7 +1,8 @@
 import { backendUri } from '$lib/backendUri';
 import { Slangroom } from '@slangroom/core';
 import getPbList from '$lib/slangroom/getPbList.zen?raw';
-import { pocketbase } from '@slangroom/pocketbase';
+import getPbRecord from '$lib/slangroom/getPbRecord.zen?raw';
+import { pocketbase, type ShowRecordParameters } from '@slangroom/pocketbase';
 
 export type VerificationFlow = {
 	collectionId: string;
@@ -74,6 +75,26 @@ export const getVerificationFlows = async (): Promise<VerificationFlow[]> => {
 		//@ts-expect-error output needs to be typed
 		return res.result?.output?.records;
 	} catch (e: unknown) {
+		throw new Error(JSON.stringify(e));
+	}
+};
+
+export const getVerificationFlow = async (id: string): Promise<VerificationFlow> => {
+	try {
+		const data: { pb_address: string; show_parameters: ShowRecordParameters } = {
+			pb_address: backendUri,
+			show_parameters: {
+				collection: 'verification_flows',
+				expand: 'relying_party',
+				id
+			}
+		};
+        console.log(data);
+		const res = await slangroom.execute(getPbRecord, { data });
+		//@ts-expect-error output needs to be typed
+		return res.result?.output;
+	} catch (e: unknown) {
+        console.log(e);
 		throw new Error(JSON.stringify(e));
 	}
 };
