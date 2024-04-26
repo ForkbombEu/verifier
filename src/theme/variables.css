@@ -34,6 +34,32 @@
 	--ion-padding: 20px;
 }
 
+@media (prefers-color-scheme: light) {
+	body {
+		--surface: #eeedf6;
+		--primary: #d7d2e5;
+		--primary-text: #2d2d2d;
+		--secondary-text: #5d5d65;
+		--accent: #3a2260;
+		--on-accent: #d7d2e5;
+		--highlight: #cdc9dc;
+		--success: #279b48;
+		--warning: #e58600;
+		--error: #ee342b;
+		--statusbar: #000000;
+		--stroke: #9b8db1;
+		--ion-background-color: var(--surface);
+		--ion-text-color: var(--on);
+		--ion-tab-bar-background: var(--surface);
+		--ion-tab-bar-color-selected: var(--on);
+		--ion-tab-bar-color: var(--on-alt);
+		--ion-safe-area-top: 0px;
+		--ion-default-font: 'Gantari Variable';
+		--ion-font-family: 'Gantari Variable';
+		--ion-padding: 20px;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	/*
      * Dark Colors
