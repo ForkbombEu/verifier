@@ -1,7 +1,5 @@
 import { PUBLIC_BACKEND_URL } from '$env/static/public';
-//@ts-ignore
 import { Slangroom } from '@slangroom/core';
-//@ts-ignore
 import { http } from '@slangroom/http';
 
 const slangroom = new Slangroom(http);

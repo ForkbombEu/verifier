@@ -51,11 +51,14 @@ dependencies:
     specifier: ^7.7.1
     version: 7.7.1
   '@slangroom/core':
-    specifier: ^1.13.0
-    version: 1.13.0(zenroom@4.12.0)
+    specifier: ^1.27.6
+    version: 1.27.6(zenroom@4.12.0)
   '@slangroom/http':
     specifier: ^1.13.0
     version: 1.13.0(zenroom@4.12.0)
+  '@slangroom/pocketbase':
+    specifier: ^1.28.2
+    version: 1.28.2(@capacitor/core@5.7.0)(zenroom@4.12.0)
   '@slangroom/qrcode':
     specifier: ^1.13.0
     version: 1.13.0(zenroom@4.12.0)
@@ -77,15 +80,24 @@ dependencies:
   ionicons:
     specifier: ^7.2.2
     version: 7.2.2
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   prettier-plugin-organize-imports:
     specifier: ^3.2.4
     version: 3.2.4(prettier@3.2.5)(typescript@5.3.3)
   svelte-preprocess:
     specifier: ^5.1.3
     version: 5.1.3(@babel/core@7.23.9)(postcss-load-config@5.0.3)(postcss@8.4.35)(svelte@4.2.10)(typescript@5.3.3)
+  sveltekit-superforms:
+    specifier: '1.13'
+    version: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.10)(zod@3.23.4)
   zenroom:
     specifier: ^4.12.0
     version: 4.12.0
+  zod:
+    specifier: ^3.23.4
+    version: 3.23.4
 
 devDependencies:
   '@inlang/paraglide-js':
@@ -1468,6 +1480,14 @@ packages:
       '@capacitor/core': 5.7.0
     dev: false
 
+  /@capacitor/preferences@6.0.0(@capacitor/core@5.7.0):
+    resolution: {integrity: sha512-4A49UKEc/sgf28TFNwRX4Kx6G0oMeRC9btA2voaEuL2LZd2l8IMfAEFDIrfQWi5rYE6RWenEUexUTyiEZnYFvQ==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+    dependencies:
+      '@capacitor/core': 5.7.0
+    dev: false
+
   /@capacitor/push-notifications@5.1.1(@capacitor/core@5.7.0):
     resolution: {integrity: sha512-lPtjlMG/PXKZEQjFFI3uqDqC8XaVjOosStvMZMVgxHgn2U45J3QRznUdVR0d6XqLmHnilxLs8ZNislkie0QfPA==}
     peerDependencies:
@@ -2832,6 +2852,25 @@ packages:
       - zenroom
     dev: false
 
+  /@slangroom/core@1.27.6(zenroom@4.12.0):
+    resolution: {integrity: sha512-vIMZqAm+Q3WQHkkZ37VpHo9hTYJ6NmiN2LqOlEbOJngY4LlzOnRmYb36m/R2/9I+xIYlfs+xeNFO7LZIKuCdLg==}
+    dependencies:
+      '@slangroom/deps': 1.27.6(zenroom@4.12.0)
+      '@slangroom/ignored': 1.27.6(zenroom@4.12.0)
+      '@slangroom/shared': 1.27.6(zenroom@4.12.0)
+    transitivePeerDependencies:
+      - zenroom
+    dev: false
+
+  /@slangroom/deps@1.27.6(zenroom@4.12.0):
+    resolution: {integrity: sha512-CWlO9dDwYE9e3fKM5yYJDfDrgwSWIgy5/MT+FR9Lr+6pPjfjg5vVo2Zf8hYmevuJYRmrErZWKFW+CUiUh2R8sA==}
+    peerDependencies:
+      zenroom: ^4.0.0
+    dependencies:
+      chevrotain: 10.5.0
+      zenroom: 4.12.0
+    dev: false
+
   /@slangroom/deps@1.9.5(zenroom@4.12.0):
     resolution: {integrity: sha512-QSO8pSKnZhqZg2IZ00SzwqH2BHtjD96KAFCfIsaD/OeFBuKCsst5NM0Ty+hYLXfKptJmRyzJrTtd2WlQh16Q8g==}
     peerDependencies:
@@ -2852,6 +2891,15 @@ packages:
       - zenroom
     dev: false
 
+  /@slangroom/ignored@1.27.6(zenroom@4.12.0):
+    resolution: {integrity: sha512-Orrp5s38udPMZvZotMiDrTEapds5Dg95L9DNAOtXAOZlYW6bdIP8TFytDSVEh+tGjCW+qPVNDb11O5P9hc8OSw==}
+    dependencies:
+      '@slangroom/deps': 1.27.6(zenroom@4.12.0)
+      '@slangroom/shared': 1.27.6(zenroom@4.12.0)
+    transitivePeerDependencies:
+      - zenroom
+    dev: false
+
   /@slangroom/ignored@1.9.6(zenroom@4.12.0):
     resolution: {integrity: sha512-w6xdfXDkWeYbzn1V1TEoEPfhNRvL2yL7DPhFeYkcD60+pukCg1fMAkaJ6K7JZBd67b8tCkAwWcpdgnXWAtZpFg==}
     dependencies:
@@ -2861,11 +2909,33 @@ packages:
       - zenroom
     dev: false
 
+  /@slangroom/pocketbase@1.28.2(@capacitor/core@5.7.0)(zenroom@4.12.0):
+    resolution: {integrity: sha512-BayI+q/Z+70UK2yzJ6KtiUg6hSmZOHQF2VPhAsrXVn0OBxGZ4/CSM2+u9izEtHqnwLj14JpENSrRbyCfvtY8yQ==}
+    dependencies:
+      '@capacitor/preferences': 6.0.0(@capacitor/core@5.7.0)
+      '@slangroom/core': 1.27.6(zenroom@4.12.0)
+      '@slangroom/shared': 1.27.6(zenroom@4.12.0)
+      dotenv: 16.4.5
+      pocketbase: 0.19.0
+      zod: 3.23.4
+    transitivePeerDependencies:
+      - '@capacitor/core'
+      - zenroom
+    dev: false
+
   /@slangroom/qrcode@1.13.0(zenroom@4.12.0):
     resolution: {integrity: sha512-OAXcgNVhFZE8GCTCn/d/t/L9j5AoErRSoD+jHE0pTHTGuxoK+bwsNiXoGfKl7t2jybRUJ9chEFSCC4EpSI4qNw==}
     dependencies:
       '@slangroom/core': 1.13.0(zenroom@4.12.0)
       qrcode: 1.5.3
+    transitivePeerDependencies:
+      - zenroom
+    dev: false
+
+  /@slangroom/shared@1.27.6(zenroom@4.12.0):
+    resolution: {integrity: sha512-rOUlt0ibmiWKFGGq2T+nlhOpwnesD2xWtfUW+SfDLGOdCjH7QlfexzPwV/pElmQJqYbisxiBKhNCtpki6OIY9Q==}
+    dependencies:
+      '@slangroom/deps': 1.27.6(zenroom@4.12.0)
     transitivePeerDependencies:
       - zenroom
     dev: false
@@ -4608,6 +4678,11 @@ packages:
     dependencies:
       is-obj: 2.0.0
 
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+    dev: false
+
   /duplexer2@0.1.4:
     resolution: {integrity: sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==}
     dependencies:
@@ -6222,6 +6297,11 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
+  /klona@2.0.6:
+    resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
+    engines: {node: '>= 8'}
+    dev: false
+
   /known-css-properties@0.29.0:
     resolution: {integrity: sha512-Ne7wqW7/9Cz54PDt4I3tcV+hAyat8ypyOGzYRJQfdxnnjeWsTxt1cy8pjvvKeI5kfXuyvULyeeAvwvvtAX3ayQ==}
     dev: true
@@ -7393,6 +7473,10 @@ packages:
   /pngjs@5.0.0:
     resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
     engines: {node: '>=10.13.0'}
+    dev: false
+
+  /pocketbase@0.19.0:
+    resolution: {integrity: sha512-bUVZfVdD17K8GnwbeDMZPEdREVg2YE0F8uHPDC0zer4VtwXUqoPCCeudTy3fhUE7pfuKnfpuPxeBSYsBY3AGIQ==}
     dev: false
 
   /postcss-import@15.1.0(postcss@8.4.35):
@@ -8812,6 +8896,20 @@ packages:
       magic-string: 0.30.7
       periscopic: 3.1.0
 
+  /sveltekit-superforms@1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.10)(zod@3.23.4):
+    resolution: {integrity: sha512-rM2+Ictaw7OAIorCLmvg82orci/mtO9ZouI4emtx8SyYngx9aED+eNZlHPLufgB6D7geL2a+hMSFtM3zmMQixQ==}
+    peerDependencies:
+      '@sveltejs/kit': 1.x || 2.x
+      svelte: 3.x || 4.x
+      zod: 3.x
+    dependencies:
+      '@sveltejs/kit': 2.5.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.10)(vite@5.1.1)
+      devalue: 4.3.2
+      klona: 2.0.6
+      svelte: 4.2.10
+      zod: 3.23.4
+    dev: false
+
   /swiper@9.4.1:
     resolution: {integrity: sha512-1nT2T8EzUpZ0FagEqaN/YAhRj33F2x/lN6cyB0/xoYJDMf8KwTFT3hMOeoB8Tg4o3+P/CKqskP+WX0Df046fqA==}
     engines: {node: '>= 4.7.0'}
@@ -9958,4 +10056,8 @@ packages:
     resolution: {integrity: sha512-dZZKRtlzVPllqV6ixx2FKmOI1kOdk+GcyVfD1FBtnbTRT3KkN9/5NnnqIHTvv4n6t3HkWGvmIwf26sR8R2S3YA==}
     dependencies:
       yarn: 1.22.21
+    dev: false
+
+  /zod@3.23.4:
+    resolution: {integrity: sha512-/AtWOKbBgjzEYYQRNfoGKHObgfAZag6qUJX1VbHo2PRBgS+wfWagEY2mizjfyAPcGesrJOcx/wcl0L9WnVrHFw==}
     dev: false

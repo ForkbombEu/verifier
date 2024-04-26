@@ -1,5 +1,5 @@
 import type { Locale } from '$lib/i18n';
-import { getPreference, setPreference } from './prefereces';
+import { getPreference, setPreference } from '.';
 
 export const LANG = 'lang';
 
