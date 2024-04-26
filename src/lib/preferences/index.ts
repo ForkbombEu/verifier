@@ -28,3 +28,10 @@ export const getStructuredPreferences = async <T>(key: string): Promise<T | unde
 	}
 	return undefined;
 };
+
+export const setStructuredPreferences = async <T>(
+	key: string,
+	value: T
+) => {
+	await setPreference(key, JSON.stringify(value));
+};
