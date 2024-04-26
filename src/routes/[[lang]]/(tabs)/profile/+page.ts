@@ -1,52 +1,36 @@
-import { Slangroom } from '@slangroom/core';
-import { pocketbase } from '@slangroom/pocketbase';
 import { getUser } from '$lib/preferences/user';
 import { getKeypairPreference } from '$lib/preferences/keypair';
 import { getDIDPreference } from '$lib/preferences/did';
-import type { ListParameters, ServerUrl } from '@slangroom/pocketbase';
 import { getPublicKeysFromKeypair } from '$lib/keypairoom';
-
-
-
-//@ts-ignore
-const slangroom = new Slangroom(pocketbase);
+import { backendUri } from '$lib/backendUri';
+import { Slangroom } from '@slangroom/core';
+import { pocketbase } from '@slangroom/pocketbase';
+import getPbList from '$lib/slangroom/getPbList.zen?raw';
 
 const getKeys = async () => {
 	const keypair = await getKeypairPreference();
 	return getPublicKeysFromKeypair(keypair!);
 };
 
-const organizations = async (k = '1') => {
-	const user = await getUser();
-    if (!user) return;
-	const data: { pb_address: ServerUrl; list_parameters: ListParameters } = {
-		pb_address: 'https://admin.signroom.io/',
+const organizations = async (userId:string)=> {
+	const slangroom = new Slangroom(pocketbase);
+	const data = {
+		pb_address: backendUri,
 		list_parameters: {
-			type: 'all',
-			collection: 'orgJoinRequests',
+			collection: 'orgAuthorizations',
 			expand: 'organization',
-			requestKey: k,
-			fields: null,
-			sort: null,
-			filter: `user.id = "${user!.id}" && status != "pending"`
+			filter: `user.id = '${userId}'`,
+			type: 'all',
 		}
 	};
-
-	const script = `
-    Rule unknown ignore
-    Given I send pb_address 'pb_address' and create pb_client
-    Given I send list_parameters 'list_parameters' and ask records and output into 'output'
-    Given I have a 'string dictionary' named 'output'
-    Then print data
-    `;
-
-	return (await slangroom.execute(script, { data })).result.output?.records;
-};
+	const orgs = await slangroom.execute(getPbList, {data});
+	//@ts-expect-error output needs to be typed	
+	return orgs.result?.output?.records.map((a) => a.expand.organization)
+}
 export const load = async () => {
-    const authorizations = await organizations();
-    const orgs = authorizations?.map(a => a.expand.organization)
-    const user = await getUser();
-    const keys = await getKeys();
-    const did = await getDIDPreference();
-    return { orgs, user, keys, did, logged: Boolean(user&&keys&&did) };
+	const user = await getUser();
+	const orgs = await organizations(user!.id);
+	const keys = await getKeys();
+	const did = await getDIDPreference();
+	return { orgs, user, keys, did, logged: Boolean(user && keys && did) };
 };
