@@ -2,10 +2,10 @@
 	import Header from '$lib/components/molecules/Header.svelte';
 	import { getServices } from '$lib/slangroom/services';
 	import { m, r } from '$lib/i18n';
+	import { TabPage } from '$lib/components/tabs';
 </script>
 
-<Header backButton={false}>{m.VERIFIER()}</Header>
-<ion-content fullscreen class="ion-padding space-y-10">
+<TabPage tab="home" title="HOME">
 	{#await getServices()}
 		<ion-spinner />
 	{:then res}
@@ -24,4 +24,4 @@
 		</div>
 	{/await}
 	<br />
-</ion-content>
+</TabPage>
