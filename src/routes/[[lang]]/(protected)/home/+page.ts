@@ -13,6 +13,6 @@ const getLang = async () => {
 export const load = async ({url}) => {
 	const lang = await getLang();
 	if (url.toString().split('/')[3] !== lang) {
-		redirect(301, r('/', lang));
+		redirect(301, r('/home', lang));
 	}
 };
