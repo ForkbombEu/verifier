@@ -61,7 +61,6 @@
 		qr = result.qrcode;
 		id = result.sid as string;
 		await saveRuAndSid(result.sid as string, result.ru as string);
-		console.log(result);
 		return qr;
 	};
 
