@@ -3,17 +3,19 @@ import { backendUri } from '$lib/backendUri';
 import { Slangroom } from '@slangroom/core';
 import { pocketbase } from '@slangroom/pocketbase';
 import getPbList from '$lib/slangroom/getPbList.zen?raw';
+import type { ListParameters } from '@slangroom/pocketbase';
 
 
 const organizations = async (userId:string)=> {
 	const slangroom = new Slangroom(pocketbase);
-	const data = {
+	const data: {pb_address:string, list_parameters: ListParameters} = {
 		pb_address: backendUri,
 		list_parameters: {
 			collection: 'orgAuthorizations',
 			expand: 'organization',
 			filter: `user.id = '${userId}'`,
 			type: 'all',
+			requestKey: String(Math.random())
 		}
 	};
 	const orgs = await slangroom.execute(getPbList, {data});
