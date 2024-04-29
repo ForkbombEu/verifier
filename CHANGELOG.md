@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/ForkbombEu/verifier/compare/v1.13.0...v1.13.1) (2024-04-29)
+
+
+### Bug Fixes
+
+* verify page ui ([4398a34](https://github.com/ForkbombEu/verifier/commit/4398a34322fdd53b826fc94d7fcef6362f034260))
+
 # [1.13.0](https://github.com/ForkbombEu/verifier/compare/v1.12.2...v1.13.0) (2024-04-26)
 
 
