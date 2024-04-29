@@ -97,10 +97,14 @@
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
 				<div
-					class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
+					class="flex flex-row items-center justify-center gap-1 rounded-lg bg-primary px-2 py-4"
 				>
-					<img src={qr} alt="qrCode" class="w-full" />
-					<div class="flex flex-col items-center justify-center gap-1 px-2 py-4 text-center">
+					<div class="flex-grow">
+						<img src={qr} alt="qrCode" class="w-full" />
+					</div>
+					<div
+						class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
+					>
 						<d-text size="l" class="w-max">Session ID:</d-text>
 						<d-heading size="s">{id}</d-heading>
 						<d-text size="m"
@@ -128,8 +132,12 @@
 			<div
 				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
 			>
-				<img src={qr} alt="qrCode" class="w-full" />
-				<div class="flex flex-col items-center justify-center gap-1 px-2 py-4 text-center">
+				<div class="flex-grow">
+					<img src={qr} alt="qrCode" class="w-full" />
+				</div>
+				<div
+					class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
+				>
 					<d-text size="l" class="w-max">Session ID:</d-text>
 					<d-heading size="s">{id}</d-heading>
 					<d-text size="m"
