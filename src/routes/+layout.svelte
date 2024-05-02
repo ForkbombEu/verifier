@@ -11,6 +11,15 @@
 
 	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
 	import { i18n } from '$lib/i18n';
+	import { removeOldRuAndSid } from '$lib/preferences/sidRu';
+
+	document.addEventListener(
+		'deviceready',
+		async function () {
+			await removeOldRuAndSid();
+		},
+		false
+	);
 </script>
 
 <svelte:head>
