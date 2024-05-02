@@ -15,6 +15,7 @@
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
 	import { backendUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
+	import { jwsToId, jwsToIdSuccess } from './_lib/tools';
 
 	export let data: any;
 
@@ -119,15 +120,21 @@
 					color="accent"
 					expand
 					on:click={() => registerQr('fcm registration token is not available in web')}
-					>RE-GENERATE</d-button
+					on:keydown={() => registerQr('fcm registration token is not available in web')}
+					aria-hidden>RE-GENERATE</d-button
 				>
 			{/await}
 			<!-- end for web -->
 		{:else if incomingNotification}
-			<ion-icon
-				icon={incomingNotification.data.message === 'ok' ? thumbsUpOutline : thumbsDownOutline}
-				class="mx-auto my-6 text-9xl"
-			></ion-icon>
+			{#await jwsToId(incomingNotification.data.message) then res}
+				<ion-input value={JSON.stringify(res)} />
+				<ion-input value={`notif ${JSON.stringify(incomingNotification)}`} />
+				<ion-icon
+					icon={res === jwsToIdSuccess ? thumbsUpOutline : thumbsDownOutline}
+					class="mx-auto my-6 text-9xl"
+				></ion-icon>
+				{JSON.stringify(res)}}
+			{/await}
 		{:else if qr}
 			<div
 				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
@@ -149,6 +156,7 @@
 				</div>
 			</div>
 			<d-button color="accent" expand on:click={() => registerQr(tok)}>RE-GENERATE</d-button>
+			<ion-input value={tok} />
 		{/if}
 
 		<Countdown initial={generationDate.unix()} />
