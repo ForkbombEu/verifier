@@ -27,6 +27,7 @@
 	let error: string;
 	let tok: string;
 
+	//@ts-expect-error qrcode should be of type plugins
 	const slangroom = new Slangroom(qrcode, helpers);
 	let incomingNotification: any;
 
@@ -152,7 +153,13 @@
 					>
 				</div>
 			</div>
-			<d-button color="accent" expand on:click={() => registerQr(tok)}>RE-GENERATE</d-button>
+			<d-button
+				color="accent"
+				expand
+				on:click={() => registerQr(tok)}
+				on:keydown={() => registerQr(tok)}
+				aria-hidden>RE-GENERATE</d-button
+			>
 		{/if}
 
 		<Countdown initial={generationDate.unix()} {expirationInterval} />

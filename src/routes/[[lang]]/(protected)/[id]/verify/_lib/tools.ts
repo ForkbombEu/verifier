@@ -30,8 +30,7 @@ export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 		};
 		const res = await slangroom.execute(verify, { data: dataVerify, keys: JSON.parse(verifyKeys) });
 		console.log(res);
-		//@ts-ignore
-		return res.result.result;
+		return res.result.result as JwsToIdResponse;
 	} catch (e) {
 		console.log(e);
 		return jwsToIdFailure;
