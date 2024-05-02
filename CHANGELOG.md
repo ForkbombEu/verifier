@@ -1,3 +1,16 @@
+# [1.14.0](https://github.com/ForkbombEu/verifier/compare/v1.13.1...v1.14.0) (2024-05-02)
+
+
+### Bug Fixes
+
+* prevent verify page continuos re-rendering ([05e1a2f](https://github.com/ForkbombEu/verifier/commit/05e1a2f36d422520803aeb774e9771c921c9704e))
+* show session id on verification feedbacks ([4203ffc](https://github.com/ForkbombEu/verifier/commit/4203ffc3ca406f148a309d7367ba94b7c8aea2d2))
+
+
+### Features
+
+* on app starts remove sid and rud older than one day ([3af63c8](https://github.com/ForkbombEu/verifier/commit/3af63c833d4a6d769c473ba9974329831823b274))
+
 ## [1.13.1](https://github.com/ForkbombEu/verifier/compare/v1.13.0...v1.13.1) (2024-04-29)
 
 
