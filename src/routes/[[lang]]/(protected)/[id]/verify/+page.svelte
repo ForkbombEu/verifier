@@ -3,7 +3,6 @@
 	import { Slangroom } from '@slangroom/core';
 	import { qrcode } from '@slangroom/qrcode';
 	import { helpers } from '@slangroom/helpers';
-	import { onMount } from 'svelte';
 	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
 	import Header from '$lib/components/molecules/Header.svelte';
 	import { m } from '$lib/i18n';
@@ -24,6 +23,7 @@
 	let qr: any;
 	let id: string;
 	let generationDate = dayjs();
+	let expirationInterval = 300;
 	let error: string;
 	let tok: string;
 
@@ -53,7 +53,7 @@
 			relying_party: verificationFlow.expand.relying_party.endpoint,
 			pb_url: backendUri,
 			pb_api: '/api/collections/templates_public_data/records',
-			expires_in: 300,
+			expires_in: expirationInterval,
 			registrationToken: t,
 			m: 'f'
 		};
@@ -62,6 +62,7 @@
 		qr = result.qrcode;
 		id = result.sid as string;
 		await saveRuAndSid(result.sid as string, result.ru as string);
+		generationDate = dayjs();
 		return qr;
 	};
 
@@ -79,12 +80,10 @@
 		await PushNotifications.register();
 	};
 
-	onMount(async () => {
-		await registerNotifications();
-		await addListeners();
-	});
-	registerNotifications();
-	addListeners();
+	$: if (!tok) {
+		registerNotifications();
+		addListeners();
+	}
 </script>
 
 <Header>{m.VERIFICATION_QR()}</Header>
@@ -127,13 +126,11 @@
 			<!-- end for web -->
 		{:else if incomingNotification}
 			{#await jwsToId(incomingNotification.data.message) then res}
-				<ion-input value={JSON.stringify(res)} />
-				<ion-input value={`notif ${JSON.stringify(incomingNotification)}`} />
+				{JSON.stringify(res)}
 				<ion-icon
 					icon={res === jwsToIdSuccess ? thumbsUpOutline : thumbsDownOutline}
 					class="mx-auto my-6 text-9xl"
 				></ion-icon>
-				{JSON.stringify(res)}}
 			{/await}
 		{:else if qr}
 			<div
@@ -156,9 +153,8 @@
 				</div>
 			</div>
 			<d-button color="accent" expand on:click={() => registerQr(tok)}>RE-GENERATE</d-button>
-			<ion-input value={tok} />
 		{/if}
 
-		<Countdown initial={generationDate.unix()} />
+		<Countdown initial={generationDate.unix()} {expirationInterval} />
 	</div>
 </ion-content>

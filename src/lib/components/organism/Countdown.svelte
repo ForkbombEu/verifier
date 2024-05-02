@@ -6,7 +6,7 @@
 
 	export let initial: number;
 
-	const expirationInterval = 300;
+	export let expirationInterval = 300;
 
 	let interval: NodeJS.Timeout;
 
