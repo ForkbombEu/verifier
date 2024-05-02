@@ -12,12 +12,10 @@ export const RU_AND_SID_KEY = 'runAndSid';
 export const saveRuAndSid = async (sid: string, ru: string) => {
 	const at = dayjs().unix();
 	const ruandSid = await getRuAndSids();
-	console.log("pip",ruandSid);
 
 	const r = { sid, ru, at };
 	if (ruandSid) {
 		const newRuAndSids = [...ruandSid, r]
-		console.log(newRuAndSids);
 		await setStructuredPreferences(RU_AND_SID_KEY, newRuAndSids);
 		return r;
 	}

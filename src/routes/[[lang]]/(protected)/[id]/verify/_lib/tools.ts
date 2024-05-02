@@ -10,16 +10,20 @@ import verifyKeys from '$lib/mobile_zencode/verifier/verify.keys.json?raw';
 const slangroom = new Slangroom(http, helpers, zencode);
 export const jwsToIdSuccess = 'Signature_verification_successful' as const;
 export const jwsToIdFailure = 'Signature_verification_error' as const;
-export type JwsToIdResponse = typeof jwsToIdSuccess | typeof jwsToIdFailure;
+export type JwsToIdResponse = {
+	message: typeof jwsToIdSuccess | typeof jwsToIdFailure;
+	id: string;
+};
 
 export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
+	let id = '';
 	try {
 		const data = {
 			message: jws
 		};
 		const r = await slangroom.execute(jwsToIdContract, { data });
 
-		const id = r?.result.id as string;
+		id = r?.result.id as string;
 		const ruAndSid = await getRuAndSid(id);
 
 		if (!ruAndSid) throw new Error(`Could not find ru for id ${id}`);
@@ -30,9 +34,10 @@ export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 		};
 		const res = await slangroom.execute(verify, { data: dataVerify, keys: JSON.parse(verifyKeys) });
 		console.log(res);
-		return res.result.result as JwsToIdResponse;
+		const message = res.result.result as typeof jwsToIdSuccess | typeof jwsToIdFailure;
+		return { message, id };
 	} catch (e) {
 		console.log(e);
-		return jwsToIdFailure;
+		return {message:jwsToIdFailure, id}
 	}
 };

@@ -127,11 +127,12 @@
 			<!-- end for web -->
 		{:else if incomingNotification}
 			{#await jwsToId(incomingNotification.data.message) then res}
-				{JSON.stringify(res)}
+				{res.message}
 				<ion-icon
-					icon={res === jwsToIdSuccess ? thumbsUpOutline : thumbsDownOutline}
+					icon={res.message === jwsToIdSuccess ? thumbsUpOutline : thumbsDownOutline}
 					class="mx-auto my-6 text-9xl"
 				></ion-icon>
+				<d-heading>SESSION ID: {res.id}</d-heading>
 			{/await}
 		{:else if qr}
 			<div
