@@ -21,6 +21,6 @@
 <ion-content class="ion-padding">
 	<d-feedback {...feedback} />
 	<div class="flex w-full flex-row items-start justify-around">
-		<d-session-card {sid} date={dayjs(at).toString()} {success} />
+		<d-session-card {sid} date={dayjs.unix(at).toString()} {success} />
 	</div>
 </ion-content>
