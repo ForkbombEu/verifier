@@ -1,5 +1,26 @@
 <script lang="ts">
 	import { TabPage } from '$lib/components/tabs';
+	import dayjs from 'dayjs';
+
+	export let data;
+	const { verifiedSids } = data;
 </script>
 
-<TabPage tab="notifications" title="Notifications">be patient</TabPage>
+<TabPage tab="notifications" title="Notifications">
+	<div class="flex flex-col items-center justify-center gap-2">
+		{#each verifiedSids as verifiedSid}
+			<div class="flex flex-col rounded-md border-on bg-primary p-4 w-full">
+				<div class="flex flex-col items-start justify-center gap-1">
+					<d-heading size="s">{verifiedSid.sid}</d-heading>
+					<d-text size="m">{verifiedSid.success ? 'verified' : 'failure'}</d-text>
+					<div class="flex items-center gap-2.5">
+						<div
+							class="h-[5px] w-[5px] shrink-0 rounded-full border border-solid border-warning bg-warning"
+						/>
+						<d-text size="s">{dayjs.unix(verifiedSid.at).toString()}</d-text>
+					</div>
+				</div>
+			</div>
+		{/each}
+	</div>
+</TabPage>
