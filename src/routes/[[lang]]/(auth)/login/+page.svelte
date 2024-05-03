@@ -37,7 +37,7 @@
 	});
 </script>
 
-<div class="flex min-h-screen flex-col place-content-between">
+<div class="flex min-h-screen flex-col place-content-between overflow-y-scroll">
 	<d-feedback {...feedback} />
 	<div class="grow">
 		<Illustration img="pidgeon" {background} />
