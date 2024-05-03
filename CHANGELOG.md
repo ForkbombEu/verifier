@@ -1,3 +1,17 @@
+# [1.16.0](https://github.com/ForkbombEu/verifier/compare/v1.15.1...v1.16.0) (2024-05-03)
+
+
+### Bug Fixes
+
+* feedback date ([46efcb4](https://github.com/ForkbombEu/verifier/commit/46efcb485552e8e0f09103858ad5493d3276f14d))
+* notifications to history ([59c9f39](https://github.com/ForkbombEu/verifier/commit/59c9f39dcaf50ea925c3d049ffa328bcf380cc53))
+
+
+### Features
+
+* dumb notifications page ([375af85](https://github.com/ForkbombEu/verifier/commit/375af85a4391a26963bc5681342c670abc2a343f))
+* end of verification flow ([753ca95](https://github.com/ForkbombEu/verifier/commit/753ca95bf1911c2e4be00af28c0b07d7a727c906))
+
 ## [1.15.1](https://github.com/ForkbombEu/verifier/compare/v1.15.0...v1.15.1) (2024-05-03)
 
 
