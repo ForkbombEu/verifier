@@ -3,7 +3,6 @@
 	import { Slangroom } from '@slangroom/core';
 	import { qrcode } from '@slangroom/qrcode';
 	import { helpers } from '@slangroom/helpers';
-	import { thumbsDownOutline, thumbsUpOutline } from 'ionicons/icons';
 	import Header from '$lib/components/molecules/Header.svelte';
 	import { m } from '$lib/i18n';
 	import dayjs from 'dayjs';
@@ -14,8 +13,9 @@
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
 	import { backendUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
-	import { jwsToId, jwsToIdSuccess } from './_lib/tools';
+	// import { jwsToId, jwsToIdSuccess } from './_lib/tools';
 	import { log } from '$lib/log';
+	import { onIncomingNotification } from './_lib/tools';
 
 	export let data: any;
 
@@ -28,7 +28,6 @@
 	let error: string;
 	let tok: string;
 
-	//@ts-expect-error qrcode should be of type plugins
 	const slangroom = new Slangroom(qrcode, helpers);
 	let incomingNotification: any;
 
@@ -42,9 +41,10 @@
 			error = err.error;
 		});
 
-		await PushNotifications.addListener('pushNotificationReceived', (notification) => {
+		await PushNotifications.addListener('pushNotificationReceived', async (notification) => {
 			incomingNotification = notification;
 			log(`Push notification received: /n ${JSON.stringify(notification)}`);
+			await onIncomingNotification(notification);
 		});
 	};
 
@@ -126,15 +126,6 @@
 				>
 			{/await}
 			<!-- end for web -->
-		{:else if incomingNotification}
-			{#await jwsToId(incomingNotification.data.message) then res}
-				{res.message}
-				<ion-icon
-					icon={res.message === jwsToIdSuccess ? thumbsUpOutline : thumbsDownOutline}
-					class="mx-auto my-6 text-9xl"
-				></ion-icon>
-				<d-heading>SESSION ID: {res.id}</d-heading>
-			{/await}
 		{:else if qr}
 			<div
 				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"

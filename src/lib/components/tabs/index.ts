@@ -1,6 +1,6 @@
 export const Tabs = {
 	home: 'home',
-	notifications: 'notifications',
+	history: 'history',
 	profile: 'profile'
 } as const;
 
