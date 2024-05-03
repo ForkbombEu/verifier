@@ -16,6 +16,10 @@ export const removePreference = async (key: string) => {
 	await Preferences.remove({ key });
 };
 
+export const clearPreferences = async () => {
+	await Preferences.clear();
+};
+
 export const getStructuredPreferences = async <T>(key: string): Promise<T | undefined> => {
 	try {
 		const value = await getPreference(key);

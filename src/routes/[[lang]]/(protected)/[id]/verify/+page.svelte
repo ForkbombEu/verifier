@@ -15,6 +15,7 @@
 	import { backendUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
 	import { jwsToId, jwsToIdSuccess } from './_lib/tools';
+	import { log } from '$lib/log';
 
 	export let data: any;
 
@@ -43,7 +44,7 @@
 
 		await PushNotifications.addListener('pushNotificationReceived', (notification) => {
 			incomingNotification = notification;
-			console.log('Push notification received: ', notification);
+			log(`Push notification received: /n ${JSON.stringify(notification)}`);
 		});
 	};
 
