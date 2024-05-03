@@ -3,6 +3,7 @@ import { Slangroom } from '@slangroom/core';
 import getPbList from '$lib/slangroom/getPbList.zen?raw';
 import getPbRecord from '$lib/slangroom/getPbRecord.zen?raw';
 import { pocketbase, type ShowRecordParameters } from '@slangroom/pocketbase';
+import { log } from '$lib/log';
 
 export type VerificationFlow = {
 	collectionId: string;
@@ -93,7 +94,7 @@ export const getVerificationFlow = async (id: string): Promise<VerificationFlow>
 		//@ts-expect-error output needs to be typed
 		return res.result?.output;
 	} catch (e: unknown) {
-        console.log(e);
+        log(JSON.stringify(e));
 		throw new Error(JSON.stringify(e));
 	}
 };

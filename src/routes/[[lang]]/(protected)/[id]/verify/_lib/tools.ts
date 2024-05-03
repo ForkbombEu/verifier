@@ -6,6 +6,7 @@ import { zencode } from '@slangroom/zencode';
 import { getRuAndSid } from '$lib/preferences/sidRu';
 import verify from '$lib/mobile_zencode/verifier/verify.zen?raw';
 import verifyKeys from '$lib/mobile_zencode/verifier/verify.keys.json?raw';
+import { log } from '$lib/log';
 
 const slangroom = new Slangroom(http, helpers, zencode);
 export const jwsToIdSuccess = 'Signature_verification_successful' as const;
@@ -33,11 +34,11 @@ export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 			claims_url: ru
 		};
 		const res = await slangroom.execute(verify, { data: dataVerify, keys: JSON.parse(verifyKeys) });
-		console.log(res);
+		log(JSON.stringify(res));
 		const message = res.result.result as typeof jwsToIdSuccess | typeof jwsToIdFailure;
 		return { message, id };
 	} catch (e) {
-		console.log(e);
+		log(JSON.stringify(e));
 		return {message:jwsToIdFailure, id}
 	}
 };
