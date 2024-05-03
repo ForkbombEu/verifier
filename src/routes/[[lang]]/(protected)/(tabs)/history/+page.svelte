@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { TabPage } from '$lib/components/tabs';
 	import dayjs from 'dayjs';
+	import relativeTime from 'dayjs/plugin/relativeTime';
 
+	dayjs.extend(relativeTime);
 	export let data;
 	const { verifiedSids } = data;
 </script>
 
-<TabPage tab="notifications" title="Notifications">
+<TabPage tab="history" title="History">
 	<div class="flex flex-col items-center justify-center gap-2">
-		{#each verifiedSids as verifiedSid}
+		{#each verifiedSids.reverse() as verifiedSid}
 			<div class="flex flex-col rounded-md border-on bg-primary p-4 w-full">
 				<div class="flex flex-col items-start justify-center gap-1">
 					<d-heading size="s">{verifiedSid.sid}</d-heading>
@@ -17,7 +19,7 @@
 						<div
 							class="h-[5px] w-[5px] shrink-0 rounded-full border border-solid border-warning bg-warning"
 						/>
-						<d-text size="s">{dayjs.unix(verifiedSid.at).toString()}</d-text>
+						<d-text size="s">{dayjs().to(dayjs.unix(verifiedSid.at))}</d-text>
 					</div>
 				</div>
 			</div>

@@ -11,7 +11,7 @@
 
 	const tabs: IonTabProps[] = [
 		{ label: 'Home', icon: home, tab: Tabs.home },
-		{ label: 'Notifications', icon: notificationsOutline, tab: Tabs.notifications },
+		{ label: 'History', icon: notificationsOutline, tab: Tabs.history },
 		{ label: 'Profile', icon: personOutline, tab: Tabs.profile }
 	];
 </script>
