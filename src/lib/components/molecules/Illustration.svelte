@@ -20,24 +20,8 @@
 		alt="background"
 	/>
 	<div class="absolute top-0 w-full">
-		{#if img === 'bell'}
-			<img src={isDark ? bellDark : bell} alt={img} class={imgClass} />
-		{:else if img === 'card-cloud'}
-			<img src={isDark ? cardCloudDark : cardCloud} alt={img} class={imgClass} />
-		{:else if img === 'cards'}
-			<img src={isDark ? cardsDark : cards} alt={img} class={imgClass} />
-		{:else if img === 'chat'}
-			<img src={isDark ? chatDark : chat} alt={img} class={imgClass} />
-		{:else if img === 'hand-card'}
-			<img src={isDark ? handCardDark : handCard} alt={img} class={imgClass} />
-		{:else if img === 'hand-ellipsis'}
-			<img src={isDark ? handEllipsisDark : handEllipsis} alt={img} class={imgClass} />
-		{:else if img === 'logo-hand'}
-			<img src={isDark ? logoHandDark : logoHand} alt={img} class={imgClass} />
-		{:else if img === 'pidgeon'}
+		{#if img === 'pidgeon'}
 			<img src={isDark ? pidgeonDark : pidgeon} alt={img} class={imgClass} />
-		{:else if img === 'search'}
-			<img src={isDark ? searchDark : search} alt={img} class={imgClass} />
 		{:else}
 			<img src={isDark ? pidgeonDark : pidgeon} alt={img} class={imgClass} />
 		{/if}
