@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/ForkbombEu/verifier/compare/v1.14.0...v1.15.0) (2024-05-03)
+
+
+### Features
+
+* add logs ([#47](https://github.com/ForkbombEu/verifier/issues/47)) ([48ca0cf](https://github.com/ForkbombEu/verifier/commit/48ca0cf99a768202b6856dcf7f40fd0bbc651c2a))
+
 # [1.14.0](https://github.com/ForkbombEu/verifier/compare/v1.13.1...v1.14.0) (2024-05-02)
 
 
