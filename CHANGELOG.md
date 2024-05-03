@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/ForkbombEu/verifier/compare/v1.15.0...v1.15.1) (2024-05-03)
+
+
+### Bug Fixes
+
+* keyboard behaviour (it used to hide inputs) ([88e701c](https://github.com/ForkbombEu/verifier/commit/88e701c22edd6046a8e9030059aa3c0f61df23dd))
+
 # [1.15.0](https://github.com/ForkbombEu/verifier/compare/v1.14.0...v1.15.0) (2024-05-03)
 
 
