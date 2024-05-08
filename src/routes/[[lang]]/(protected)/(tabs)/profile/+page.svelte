@@ -1,6 +1,7 @@
 <script lang="ts">
 	// import { m } from '$lib/i18n';
 	import { authFilesUri, filesUri } from '$lib/backendUri.js';
+	import AppDetails from '$lib/components/AppDetails.svelte';
 	import { TabPage } from '$lib/components/tabs/index.js';
 
 	export let data;
@@ -21,5 +22,6 @@
 			</div>
 		{/if}
 		<d-button href="/logout" class="mt-20 w-full" color="outline" expand>Logout</d-button>
+		<AppDetails />
 	</div>
 </TabPage>
