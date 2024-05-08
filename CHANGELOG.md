@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/ForkbombEu/verifier/compare/v1.16.0...v1.17.0) (2024-05-08)
+
+
+### Features
+
+* show version in profile page ([3f48481](https://github.com/ForkbombEu/verifier/commit/3f484811660f66ca8e5e22bf333b165541a1be79))
+
 # [1.16.0](https://github.com/ForkbombEu/verifier/compare/v1.15.1...v1.16.0) (2024-05-03)
 
 
