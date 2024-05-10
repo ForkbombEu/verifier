@@ -1,21 +1,13 @@
 <script lang="ts">
-	import { home, personOutline, notificationsOutline } from 'ionicons/icons';
-
-	// Note – IonTabs must be imported this way, otherwise the app breaks
-	//@ts-ignore
-	import IonTabs from 'ionic-svelte/components/IonTabs.svelte';
-	import { type IonTabProps, Tabs } from '$lib/components/tabs';
-	// import { m } from '$lib/i18n';
-
-	//
+	import { type IonTabProps, Tabs, IonTabs } from '$lib/components/tabs';
 
 	const tabs: IonTabProps[] = [
-		{ label: 'Home', icon: home, tab: Tabs.home },
-		{ label: 'History', icon: notificationsOutline, tab: Tabs.history },
-		{ label: 'Profile', icon: personOutline, tab: Tabs.profile }
+		{ label: 'Home', tab: Tabs.home },
+		{ label: 'Activity', tab: Tabs.activity },
+		{ label: 'Profile', tab: Tabs.profile }
 	];
 </script>
 
-<IonTabs slot="bottom" {tabs}>
+<IonTabs {tabs}>
 	<slot />
 </IonTabs>

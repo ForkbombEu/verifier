@@ -8,7 +8,7 @@
 	const { verifiedSids } = data;
 </script>
 
-<TabPage tab="history" title="History">
+<TabPage tab="activity" title="Activity">
 	<div class="flex flex-col items-center justify-center gap-2">
 		{#each verifiedSids.reverse() as verifiedSid}
 			<div class="flex flex-col rounded-md border-on bg-primary p-4 w-full">
