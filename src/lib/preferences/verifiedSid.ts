@@ -12,12 +12,15 @@ export const VERIFIED_SID_KEY = 'verifiedSid';
 
 export const saveVerifiedSid = async (sid: string, success: boolean, message?: string) => {
 	const at = dayjs().unix();
-	const verifiedSid = await getVerifiedSids();
+	const verifiedSids = await getVerifiedSids();
 
 	const r = { sid, success, at, message };
-	if (verifiedSid) {
-		const newVerifiedSids = [...verifiedSid, r];
-		await setStructuredPreferences(VERIFIED_SID_KEY, newVerifiedSids);
+	if (verifiedSids) {
+		const oldItem = await getVerifiedSid(sid);
+		if (!oldItem) {
+			const newVerifiedSids = [...verifiedSids, r];
+			await setStructuredPreferences(VERIFIED_SID_KEY, newVerifiedSids);
+		}
 		return r;
 	}
 	await setStructuredPreferences(VERIFIED_SID_KEY, [r]);
