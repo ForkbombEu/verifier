@@ -1,17 +1,8 @@
 <script lang="ts">
-	import Bell from '$lib/assets/bell.svelte';
 	import { TabPage } from '$lib/components/tabs';
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime';
-	import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
-	import { arrowForwardOutline } from 'ionicons/icons';
-
-	const openSettings = async () => {
-		await NativeSettings.open({
-			optionAndroid: AndroidSettings.AppNotification,
-			optionIOS: IOSSettings.App
-		});
-	};
+	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
 
 	dayjs.extend(relativeTime);
 	export let data;
@@ -36,18 +27,10 @@
 				</div>
 			{/each}
 		{:else}
-			<div class="flex h-3/5 flex-col items-center justify-center gap-1">
-				<div>
-					<Bell />
-				</div>
-				<d-heading size="s">No activity yet</d-heading>
-				<d-text size="l" class="pb-4 text-center"
-					>Get alerts on new activities and keep your account up-to-date.</d-text
-				>
-				<d-button expand color="outline" on:click={openSettings}>
-					NOTIFICATIONS SETTINGS <ion-icon slot="end" icon={arrowForwardOutline} />
-				</d-button>
-			</div>
+			<EmptyState
+				title="No activity yet"
+				subtitle="Get alerts on new activities and keep your account up-to-date."
+			/>
 		{/if}
 	</div>
 </TabPage>
