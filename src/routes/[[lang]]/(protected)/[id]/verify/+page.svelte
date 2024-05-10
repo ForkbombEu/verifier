@@ -8,6 +8,7 @@
 	import dayjs from 'dayjs';
 	import { Capacitor } from '@capacitor/core';
 	import Countdown from '$lib/components/organism/Countdown.svelte';
+	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
 
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
@@ -27,6 +28,7 @@
 	let expirationInterval = 300;
 	let error: string;
 	let tok: string;
+	let permissionDenied: boolean;
 
 	const slangroom = new Slangroom(qrcode, helpers);
 	let incomingNotification: any;
@@ -76,7 +78,8 @@
 		}
 
 		if (permStatus.receive !== 'granted') {
-			throw new Error('User denied permissions!');
+			permissionDenied = true;
+			// throw new Error('User denied permissions!');
 		}
 
 		await PushNotifications.register();
@@ -126,6 +129,11 @@
 				>
 			{/await}
 			<!-- end for web -->
+		{:else if permissionDenied}
+			<EmptyState
+				title="Permission Denied"
+				subtitle="Please allow the app to receive push notifications in order to proceed."
+			/>
 		{:else if qr}
 			<div
 				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
@@ -153,8 +161,7 @@
 				on:keydown={() => registerQr(tok)}
 				aria-hidden>RE-GENERATE</d-button
 			>
+			<Countdown initial={generationDate.unix()} {expirationInterval} />
 		{/if}
-
-		<Countdown initial={generationDate.unix()} {expirationInterval} />
 	</div>
 </ion-content>
