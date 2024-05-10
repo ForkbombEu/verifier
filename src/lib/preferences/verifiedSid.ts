@@ -25,10 +25,10 @@ export const saveVerifiedSid = async (sid: string, success: boolean, message?: s
 };
 
 export const getVerifiedSids = async () => {
-	return (await getStructuredPreferences(VERIFIED_SID_KEY)) as VerifiedSid[];
+	return (await getStructuredPreferences(VERIFIED_SID_KEY)) as VerifiedSid[] | undefined;
 };
 
 export const getVerifiedSid = async (sid: string) => {
 	const verifiedSids = await getVerifiedSids();
-	return verifiedSids.find((r) => r.sid === sid);
+	return verifiedSids?.find((r) => r.sid === sid);
 };
