@@ -77,6 +77,9 @@ dependencies:
   '@vite-pwa/sveltekit':
     specifier: ^0.3.0
     version: 0.3.0(@sveltejs/kit@2.5.0)(vite-plugin-pwa@0.19.8)
+  capacitor-native-settings:
+    specifier: ^6.0.0
+    version: 6.0.0(@capacitor/core@5.7.0)
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -4035,6 +4038,14 @@ packages:
 
   /caniuse-lite@1.0.30001612:
     resolution: {integrity: sha512-lFgnZ07UhaCcsSZgWW0K5j4e69dK1u/ltrL9lTUiFOwNHs12S3UMIEYgBV0Z6C6hRDev7iRnMzzYmKabYdXF9g==}
+
+  /capacitor-native-settings@6.0.0(@capacitor/core@5.7.0):
+    resolution: {integrity: sha512-2Kb6LcmLlfmWiuIvsT0+75TZf0wBELXl/4bw4kuB279mgdupXE2kYipfZgol28X0428bkzT76jrVd5zZhYHXuw==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+    dependencies:
+      '@capacitor/core': 5.7.0
+    dev: false
 
   /chai@4.4.1:
     resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}

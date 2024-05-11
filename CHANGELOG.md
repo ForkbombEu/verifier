@@ -1,3 +1,16 @@
+# [1.18.0](https://github.com/ForkbombEu/verifier/compare/v1.17.0...v1.18.0) (2024-05-10)
+
+
+### Bug Fixes
+
+* the history was saved two times ([7601969](https://github.com/ForkbombEu/verifier/commit/7601969282dbdbbfbfca79ae7a4adb86692c9577))
+
+
+### Features
+
+* add empty state in verify page if user dont allow push notifications ([75e81d2](https://github.com/ForkbombEu/verifier/commit/75e81d230e5517ca3b3cd574870a2492fc1155a2))
+* empty state for activity ([a2fc881](https://github.com/ForkbombEu/verifier/commit/a2fc8810977d18cac6a55cbeb5a2698440254a73))
+
 # [1.17.0](https://github.com/ForkbombEu/verifier/compare/v1.16.0...v1.17.0) (2024-05-08)
 
 
