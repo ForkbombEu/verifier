@@ -1,6 +1,6 @@
 export const Tabs = {
 	home: 'home',
-	history: 'history',
+	activity: 'activity',
 	profile: 'profile'
 } as const;
 
@@ -10,11 +10,11 @@ export type Tab = (typeof Tabs)[keyof typeof Tabs];
 
 export type IonTabProps = {
 	label: string;
-	icon: string;
 	tab: Tab;
 };
 
 //
 
 import TabPage from './TabPage.svelte';
-export { TabPage };
+import IonTabs from './IonTabs.svelte';
+export { TabPage, IonTabs };
