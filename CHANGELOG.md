@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/ForkbombEu/verifier/compare/v1.18.0...v1.19.0) (2024-05-12)
+
+
+### Features
+
+* update didroom components to latest and tab bar ([177bd9f](https://github.com/ForkbombEu/verifier/commit/177bd9f44dc391c966df297a50e81b9b4eaf1888))
+
 # [1.18.0](https://github.com/ForkbombEu/verifier/compare/v1.17.0...v1.18.0) (2024-05-10)
 
 
