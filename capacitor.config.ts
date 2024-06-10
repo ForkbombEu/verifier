@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-    appId: 'eu.forkbomb.didroom.verifier',
+    appId: 'com.didroom.verifier',
     appName: 'verifier',
     webDir: 'build',
     server: {

@@ -1,4 +1,4 @@
-package eu.forkbomb.didroom.verifier;
+package com.didroom.verifier;
 
 import com.getcapacitor.BridgeActivity;
 
