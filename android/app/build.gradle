@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "eu.forkbomb.didroom.verifier"
+    namespace "com.didroom.verifier"
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "eu.forkbomb.didroom.verifier"
+        applicationId "com.didroom.verifier"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
