@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { TabPage } from '$lib/components/tabs';
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime';
 	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
@@ -9,7 +8,7 @@
 	const { verifiedSids } = data;
 </script>
 
-<TabPage tab="activity" title="Activity">
+<d-tab-page tab="activity" title="Activity">
 	<div class="flex flex-col items-center justify-center gap-2">
 		{#if verifiedSids && verifiedSids.length > 0}
 			{#each verifiedSids.reverse() as verifiedSid}
@@ -33,4 +32,4 @@
 			/>
 		{/if}
 	</div>
-</TabPage>
+</d-tab-page>

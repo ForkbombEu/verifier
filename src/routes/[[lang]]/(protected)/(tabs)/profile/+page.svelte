@@ -1,15 +1,13 @@
 <script lang="ts">
-	// import { m } from '$lib/i18n';
 	import { authFilesUri, filesUri } from '$lib/backendUri.js';
 	import AppDetails from '$lib/components/AppDetails.svelte';
-	import { TabPage } from '$lib/components/tabs/index.js';
 
 	export let data;
 
 	const { orgs, user } = data;
 </script>
 
-<TabPage tab="profile" title="Profile">
+<d-tab-page tab="profile" title="Profile">
 	<div class="flex flex-col items-center gap-2 pt-8 text-center">
 		<d-avatar src={authFilesUri(user?.avatar, user?.id)} size="xl"></d-avatar>
 		<d-heading size="s" class="w-full">{user?.name || user?.email}</d-heading>
@@ -24,4 +22,4 @@
 		<d-button href="/logout" class="mt-20 w-full" color="outline" expand>Logout</d-button>
 		<AppDetails />
 	</div>
-</TabPage>
+</d-tab-page>
