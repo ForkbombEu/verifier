@@ -69,7 +69,8 @@ export const getVerificationFlows = async (): Promise<VerificationFlow[]> => {
 				collection: 'verification_flows',
 				expand: 'relying_party, organization',
 				sort: '-updated',
-				type: 'all'
+				type: 'all',
+				requestKey: Math.random().toString(36).substring(7)
 			}
 		};
 		const res = await slangroom.execute(getPbList, { data });
