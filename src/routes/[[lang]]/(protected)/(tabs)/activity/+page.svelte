@@ -1,35 +1,47 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime';
-	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
+	import Bell from '$lib/assets/bell.svelte';
+	import { m } from '$lib/i18n';
+	import { arrowForwardOutline } from 'ionicons/icons';
 
 	dayjs.extend(relativeTime);
 	export let data;
 	const { verifiedSids } = data;
+	const openSettings = async () => {
+		await NativeSettings.open({
+			optionAndroid: AndroidSettings.AppNotification,
+			optionIOS: IOSSettings.App
+		});
+	};
 </script>
 
 <d-tab-page tab="activity" title="Activity">
 	<div class="flex flex-col items-center justify-center gap-2">
 		{#if verifiedSids && verifiedSids.length > 0}
 			{#each verifiedSids.reverse() as verifiedSid}
-				<div class="flex w-full flex-col rounded-md border-on bg-primary p-4">
-					<div class="flex flex-col items-start justify-center gap-1">
-						<d-heading size="s">{verifiedSid.sid}</d-heading>
-						<d-text size="m">{verifiedSid.success ? 'verified' : 'failure'}</d-text>
-						<div class="flex items-center gap-2.5">
-							<div
-								class="h-[5px] w-[5px] shrink-0 rounded-full border border-solid border-warning bg-warning"
-							/>
-							<d-text size="s">{dayjs().to(dayjs.unix(verifiedSid.at))}</d-text>
-						</div>
-					</div>
-				</div>
+				<d-activity-card
+					name={verifiedSid.sid}
+					description={verifiedSid.success ? 'verified' : 'failure'}
+					date={dayjs().to(dayjs.unix(verifiedSid.at))}
+				/>
 			{/each}
 		{:else}
-			<EmptyState
-				title="No activity yet"
-				subtitle="Get alerts on new activities and keep your account up-to-date."
-			/>
+			<d-empty-state
+				heading={m.No_activity_yet()}
+				text={m.Get_alerts_on_new_activities_and_keep_your_account_uptodate_()}
+			>
+				<Bell />
+				<d-button
+					expand
+					color="outline"
+					on:click={openSettings}
+					on:keydown={openSettings}
+					aria-hidden
+				>
+					{m.NOTIFICATIONS_SETTINGS()} <ion-icon slot="end" icon={arrowForwardOutline} />
+				</d-button>
+			</d-empty-state>
 		{/if}
 	</div>
 </d-tab-page>
