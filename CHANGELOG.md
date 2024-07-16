@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/ForkbombEu/verifier/compare/v1.19.0...v1.20.0) (2024-07-16)
+
+
+### Features
+
+* update didroom-components ([#63](https://github.com/ForkbombEu/verifier/issues/63)) ([6610973](https://github.com/ForkbombEu/verifier/commit/66109736fab81044a47dd0182b5dea8f3209cb0a))
+
 # [1.19.0](https://github.com/ForkbombEu/verifier/compare/v1.18.0...v1.19.0) (2024-05-12)
 
 
