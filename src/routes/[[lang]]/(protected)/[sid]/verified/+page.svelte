@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Header from '$lib/components/molecules/Header.svelte';
+	import { back } from '$lib/utils/index.js';
 	import type { Feedback } from '$lib/utils/types.js';
 	import dayjs from 'dayjs';
 
@@ -17,7 +17,7 @@
 	}
 </script>
 
-<Header>Verification</Header>
+<d-header back-button backFunction={back}>Verification</d-header>
 <ion-content class="ion-padding">
 	<d-feedback {...feedback} />
 	<div class="flex w-full flex-row items-start justify-around">

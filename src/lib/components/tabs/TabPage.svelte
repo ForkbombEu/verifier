@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/components/molecules/Header.svelte';
 	import type { Tab } from '.';
 
 	export let tab: Tab;
@@ -7,7 +6,7 @@
 </script>
 
 <ion-tab {tab}>
-	<Header backButton={false}>{title}</Header>
+	<d-header>{title}</d-header>
 
 	<ion-content fullscreen class="ion-padding">
 		<slot />
