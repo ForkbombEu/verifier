@@ -65,7 +65,12 @@
 		const result = res.result;
 		qr = result.qrcode;
 		id = result.sid as string;
-		await saveRuAndSid(result.sid as string, result.ru as string);
+		await saveRuAndSid(
+			result.sid as string,
+			result.ru as string,
+			verificationFlow.expand.template.zencode_script,
+			verificationFlow.expand.template.zencode_data
+		);
 		generationDate = dayjs();
 		return qr;
 	};

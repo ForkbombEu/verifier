@@ -86,11 +86,12 @@ export const getVerificationFlow = async (id: string): Promise<VerificationFlow>
 			pb_address: backendUri,
 			show_parameters: {
 				collection: 'verification_flows',
-				expand: 'relying_party',
+				expand: 'relying_party, template',
 				id
 			}
 		};
 		const res = await slangroom.execute(getPbRecord, { data });
+		console.log(res.result?.output);
 		//@ts-expect-error output needs to be typed
 		return res.result?.output;
 	} catch (e: unknown) {
