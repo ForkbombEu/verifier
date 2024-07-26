@@ -3,7 +3,6 @@
 	import { Slangroom } from '@slangroom/core';
 	import { qrcode } from '@slangroom/qrcode';
 	import { helpers } from '@slangroom/helpers';
-	import Header from '$lib/components/molecules/Header.svelte';
 	import { m } from '$lib/i18n';
 	import dayjs from 'dayjs';
 	import { Capacitor } from '@capacitor/core';
@@ -14,9 +13,9 @@
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
 	import { backendUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
-	// import { jwsToId, jwsToIdSuccess } from './_lib/tools';
 	import { log } from '$lib/log';
 	import { onIncomingNotification } from './_lib/tools';
+	import { back } from '$lib/utils';
 
 	export let data: any;
 
@@ -91,7 +90,7 @@
 	}
 </script>
 
-<Header>{m.VERIFICATION_QR()}</Header>
+<d-header back-button backFunction={back}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
 	<div class="flex flex-col justify-center gap-8 text-center">
 		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
