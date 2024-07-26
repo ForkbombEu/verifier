@@ -20,6 +20,20 @@ export type JwsToIdResponse = {
 	message?: string;
 };
 
+const parseVerificationError = (e: Error):string => {
+	try {
+		const message =  JSON.parse(e.message);
+		const trace = message.filter((s)=>s.startsWith("J64 TRACE:"))[0];
+		const errorBase64 = trace.split("J64 TRACE: ")[1];
+		const errorArray = JSON.parse(atob(errorBase64));
+		const errors = errorArray.filter((s)=>s.startsWith("[!]"));
+		return errors.join("\n");
+	} catch {
+		return e.message
+	}
+
+}
+
 export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 	let id = '';
 	try {
@@ -32,18 +46,22 @@ export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 		const ruAndSid = await getRuAndSid(id);
 
 		if (!ruAndSid) throw new Error(`Could not find ru for id ${id}`);
-		const { ru } = ruAndSid;
+		const { ru, code, data:keys } = ruAndSid;
 		const dataVerify = {
 			...data,
 			claims_url: ru
 		};
 		const res = await slangroom.execute(verify, { data: dataVerify, keys: JSON.parse(verifyKeys) });
-		log(JSON.stringify(res));
 		const result = res.result.result as jwsToIdResult;
+		const inputToCustomCode = res.result.input_to_custom_code;
+		// Execute custom code
+		const customCodeResult = await slangroom.execute(code, { data: inputToCustomCode, keys: JSON.parse(keys) });
+		console.log(customCodeResult);
 		return { result, id };
-	} catch (e) {
-		log(JSON.stringify(e));
-		return { result: jwsToIdFailure, id, message: JSON.stringify(e) };
+	} catch (e:unknown) {
+		const message = parseVerificationError(e as Error);
+		log(message);
+		return { result: jwsToIdFailure, id, message };
 	}
 };
 

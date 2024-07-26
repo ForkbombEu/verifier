@@ -5,15 +5,17 @@ export type RuAndSid = {
 	sid: string;
 	ru: string;
 	at: number;
+	code: string;
+	data:string;
 };
 
 export const RU_AND_SID_KEY = 'runAndSid';
 
-export const saveRuAndSid = async (sid: string, ru: string) => {
+export const saveRuAndSid = async (sid: string, ru: string, code:string, data:string) => {
 	const at = dayjs().unix();
 	const ruandSid = await getRuAndSids();
 
-	const r = { sid, ru, at };
+	const r = { sid, ru, at, code, data };
 	if (ruandSid) {
 		const newRuAndSids = [...ruandSid, r]
 		await setStructuredPreferences(RU_AND_SID_KEY, newRuAndSids);
