@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/ForkbombEu/verifier/compare/v1.20.0...v1.21.0) (2024-07-26)
+
+
+### Features
+
+* exec custom code on verification ([#66](https://github.com/ForkbombEu/verifier/issues/66)) ([8303026](https://github.com/ForkbombEu/verifier/commit/83030264e6154c09fc0d951f2302dca82f974012))
+
 # [1.20.0](https://github.com/ForkbombEu/verifier/compare/v1.19.0...v1.20.0) (2024-07-16)
 
 
