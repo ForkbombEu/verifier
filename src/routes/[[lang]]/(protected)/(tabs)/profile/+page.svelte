@@ -18,6 +18,7 @@
 	};
 
 	const gotoLanguageSettings = () => goto('/languages');
+	const gotoAccountSettings = () => goto('/user-settings');
 </script>
 
 <d-tab-page tab="profile" title={m.Profile()} settings>
@@ -50,6 +51,7 @@
 			developedBy={m.Developed_by_Forkbomb()}
 			{logoutCB}
 			{gotoLanguageSettings}
+			{gotoAccountSettings}
 			{openAppSettings}
 		/>
 	</div>

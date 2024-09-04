@@ -14,6 +14,9 @@ dependencies:
   '@capacitor/assets':
     specifier: ^3.0.4
     version: 3.0.4(@types/node@20.12.7)(typescript@5.3.3)
+  '@capacitor/camera':
+    specifier: ^6.0.2
+    version: 6.0.2(@capacitor/core@5.7.0)
   '@capacitor/cli':
     specifier: ^5.7.0
     version: 5.7.0
@@ -1455,6 +1458,14 @@ packages:
       - encoding
       - supports-color
       - typescript
+    dev: false
+
+  /@capacitor/camera@6.0.2(@capacitor/core@5.7.0):
+    resolution: {integrity: sha512-bC2xxCcNTyfKYuLNLbGIyLlK9fok2MDhF4v8s01jusYAxoBI7LaKWQMQoGBA1MY/Ec6x/2pjIr+7k89Kmdr74g==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+    dependencies:
+      '@capacitor/core': 5.7.0
     dev: false
 
   /@capacitor/cli@5.7.0:
