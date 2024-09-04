@@ -55,4 +55,5 @@
 			{openAppSettings}
 		/>
 	</div>
+	<div class="pb-24" />
 </d-tab-page>
