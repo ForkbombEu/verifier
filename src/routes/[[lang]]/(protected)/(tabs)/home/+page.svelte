@@ -10,7 +10,7 @@
 	<d-heading size="s">
 		{m.Verify_credential()}
 	</d-heading>
-	<div class="flex flex-col gap-2">
+	<d-vertical-stack>
 		{#each verificationFlows as vf}
 			<d-credential-service
 				href={r(`/${vf.id}/verify/`)}
@@ -23,6 +23,6 @@
 				issuer={vf.expand.relying_party.name}
 			/>
 		{/each}
-	</div>
+	</d-vertical-stack>
 	<br />
 </d-tab-page>

@@ -7,7 +7,6 @@
 	import dayjs from 'dayjs';
 	import { Capacitor } from '@capacitor/core';
 	import Countdown from '$lib/components/organism/Countdown.svelte';
-	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
 
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
@@ -134,9 +133,9 @@
 			{/await}
 			<!-- end for web -->
 		{:else if permissionDenied}
-			<EmptyState
-				title="Permission Denied"
-				subtitle="Please allow the app to receive push notifications in order to proceed."
+			<d-empty-state
+				heading={'Permission Denied'}
+				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
 			<div

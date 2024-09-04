@@ -1,6 +1,5 @@
 export const Tabs = {
 	home: 'home',
-	wallet: 'wallet',
 	activity: 'activity',
 	profile: 'profile'
 } as const;

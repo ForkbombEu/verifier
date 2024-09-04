@@ -4,6 +4,7 @@
 	import Bell from '$lib/assets/bell.svelte';
 	import { m } from '$lib/i18n';
 	import { arrowForwardOutline } from 'ionicons/icons';
+	import { AndroidSettings, IOSSettings, NativeSettings } from 'capacitor-native-settings';
 
 	dayjs.extend(relativeTime);
 	export let data;
@@ -17,7 +18,7 @@
 </script>
 
 <d-tab-page tab="activity" title="Activity">
-	<div class="flex flex-col items-center justify-center gap-2">
+	<d-vertical-stack class="items-center justify-center">
 		{#if verifiedSids && verifiedSids.length > 0}
 			{#each verifiedSids.reverse() as verifiedSid}
 				<d-activity-card
@@ -43,5 +44,5 @@
 				</d-button>
 			</d-empty-state>
 		{/if}
-	</div>
+	</d-vertical-stack>
 </d-tab-page>
