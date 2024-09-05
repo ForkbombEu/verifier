@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Form, createForm } from '$lib/components/forms';
+	import { Form, createForm, Checkbox, Input } from '$lib/components/forms';
 	import { goto, m } from '$lib/i18n';
-	import Input from '$lib/components/forms/input.svelte';
 	import { z } from 'zod';
 	import background from '$lib/assets/bg-4.svg';
 	import { login } from '$lib/slangroom/login';
@@ -14,6 +13,9 @@
 	const schema = z.object({
 		email: z.string().email(),
 		password: z.string().min(8),
+		conditions: z.literal(true, {
+			message: m.You_must_accept_the_terms_and_conditions_to_continue()
+		}),
 		rememberEmail: z.boolean().optional()
 	});
 
@@ -58,6 +60,15 @@
 							placeholder={'password'}
 							label={'password'}
 						/>
+						<Checkbox fieldPath="conditions" {form}
+							>{m.Accept()}
+							<a
+								href="https://didroom.com/guides/7_terms-and-conditions/"
+								class="text-accent underline"
+							>
+								{m.Terms_and_Conditions()}
+							</a></Checkbox
+						>
 						<d-button size="default" color="accent" type="submit" expand class="mt-4">
 							{'Login'}
 						</d-button>
