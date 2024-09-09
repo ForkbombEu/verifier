@@ -9,5 +9,16 @@
 	"Badges": "Badges",
 	"No_activity_yet": "No activity yet",
 	"Get_alerts_on_new_activities_and_keep_your_account_uptodate_": "Get alerts on new activities and keep your account up-to-date.",
-	"NOTIFICATIONS_SETTINGS": "NOTIFICATIONS SETTINGS"
+	"NOTIFICATIONS_SETTINGS": "NOTIFICATIONS SETTINGS",
+	"Account_Settings": "Account Settings",
+	"Security_and_Authentication": "Security and Authentication",
+	"Notifications_Settings": "Notifications Settings",
+	"Languages": "Languages",
+	"Support": "'Support",
+	"Privacy_Policy": "Privacy Policy",
+	"Log_Out": "Log Out",
+	"Profile": "Profile",
+	"Accept": "Accept",
+	"Terms_and_Conditions": "Terms and Conditions",
+	"You_must_accept_the_terms_and_conditions_to_continue": "You must accept the terms and conditions to continue"
 }

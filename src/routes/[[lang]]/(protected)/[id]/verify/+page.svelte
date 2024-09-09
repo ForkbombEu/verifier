@@ -3,11 +3,10 @@
 	import { Slangroom } from '@slangroom/core';
 	import { qrcode } from '@slangroom/qrcode';
 	import { helpers } from '@slangroom/helpers';
-	import { m } from '$lib/i18n';
+	import { goto, m } from '$lib/i18n';
 	import dayjs from 'dayjs';
 	import { Capacitor } from '@capacitor/core';
 	import Countdown from '$lib/components/organism/Countdown.svelte';
-	import EmptyState from '$lib/components/molecules/EmptyState.svelte';
 
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
@@ -15,7 +14,6 @@
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
 	import { log } from '$lib/log';
 	import { onIncomingNotification } from './_lib/tools';
-	import { back } from '$lib/utils';
 
 	export let data: any;
 
@@ -95,7 +93,7 @@
 	}
 </script>
 
-<d-header back-button backFunction={back}>{m.VERIFICATION_QR()}</d-header>
+<d-header back-button backFunction={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
 	<div class="flex flex-col justify-center gap-8 text-center">
 		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
@@ -134,9 +132,9 @@
 			{/await}
 			<!-- end for web -->
 		{:else if permissionDenied}
-			<EmptyState
-				title="Permission Denied"
-				subtitle="Please allow the app to receive push notifications in order to proceed."
+			<d-empty-state
+				heading={'Permission Denied'}
+				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
 			<div
