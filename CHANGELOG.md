@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/ForkbombEu/verifier/compare/v1.21.0...v1.21.1) (2024-09-10)
+
+
+### Bug Fixes
+
+* deployments node version and last didroom-components ([#70](https://github.com/ForkbombEu/verifier/issues/70)) ([e256fd1](https://github.com/ForkbombEu/verifier/commit/e256fd1665b14e9314a7b1cbb161572a7ae1442e))
+
 # [1.21.0](https://github.com/ForkbombEu/verifier/compare/v1.20.0...v1.21.0) (2024-07-26)
 
 
