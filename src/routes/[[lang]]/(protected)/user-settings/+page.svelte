@@ -125,7 +125,7 @@
 	let name = form.fields.name?.value;
 </script>
 
-<d-header back-button backFunction={() => window.history.back()}>User Settings</d-header>
+<d-header back-button on:backButtonClick={() => window.history.back()}>User Settings</d-header>
 <d-loading {loading}> </d-loading>
 
 <div class="ion-padding flex w-full flex-col items-center gap-6">

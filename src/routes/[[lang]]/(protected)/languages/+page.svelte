@@ -4,6 +4,7 @@
 	import { setLanguagePreference } from '$lib/preferences/lang';
 	import { availableLanguageTags } from '$paraglide/runtime';
 
+	const back = () => goto('/profile');
 	const recordLanguages = {
 		en: 'English',
 		es: 'Español',
@@ -12,10 +13,15 @@
 		it: 'Italiano'
 	};
 	$: activeLanguage = i18n.getLanguageFromUrl($page.url);
-	const back = () => goto('/profile')
+	function handleLanguageChange(language: 'en' | 'it') {
+		setLanguagePreference(language).then(() => {
+			activeLanguage = language;
+			window.location.replace(`/${language}/languages`);
+		});
+	}
 </script>
 
-<d-header back-button backFunction={back}>
+<d-header back-button on:backButtonClick={back}>
 	{m.Languages()}
 </d-header>
 
@@ -33,11 +39,7 @@
 		{:else}
 			<button
 				class="border-b-stroke flex h-16 w-full items-center justify-between gap-2.5 rounded-lg border-b border-solid px-5 py-8"
-				on:click={async () => {
-					await setLanguagePreference(language);
-					activeLanguage = language;
-					window.location.replace(`/${language}/languages`);
-				}}
+				on:click={() => handleLanguageChange(language)}
 			>
 				<span class="flex items-center self-stretch">
 					{recordLanguages[language]}
