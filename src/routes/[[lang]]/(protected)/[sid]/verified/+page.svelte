@@ -17,7 +17,7 @@
 	}
 </script>
 
-<d-header back-button backFunction={back}>Verification</d-header>
+<d-header back-button on:backButtonClick={back}>Verification</d-header>
 <ion-content class="ion-padding">
 	<d-feedback {...feedback} />
 	<div class="flex w-full flex-row items-start justify-around">

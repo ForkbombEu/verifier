@@ -93,7 +93,7 @@
 	}
 </script>
 
-<d-header back-button backFunction={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
+<d-header back-button on:backButtonClick={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
 	<div class="flex flex-col justify-center gap-8 text-center">
 		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
