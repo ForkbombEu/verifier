@@ -19,6 +19,7 @@
 
 	const gotoLanguageSettings = () => goto('/languages');
 	const gotoAccountSettings = () => goto('/user-settings');
+
 </script>
 
 <d-tab-page tab="profile" title={m.Profile()} settings>
@@ -40,19 +41,22 @@
 	</div>
 	<div slot="settings">
 		<d-settings-menu
-			accountSettings={m.Account_Settings()}
-			securityAndAuthentication={m.Security_and_Authentication()}
-			notificationsSettings={m.Notifications_Settings()}
+			account-settings={m.Account_Settings()}
+			security-and-authentication={m.Security_and_Authentication()}
+			notifications-settings={m.Notifications_Settings()}
 			languages={m.Languages()}
 			support={m.Support()}
-			privacyPolicy={m.Privacy_Policy()}
-			logOut={m.Log_Out()}
+			privacy-policy={m.Privacy_Policy()}
+			log-out={m.Log_Out()}
 			{version}
-			developedBy={m.Developed_by_Forkbomb()}
-			{logoutCB}
-			{gotoLanguageSettings}
-			{gotoAccountSettings}
-			{openAppSettings}
+			developed-by={m.Developed_by_Forkbomb()}
+			on:accountSettingsClick={() => goto('/user-settings')}
+			on:languageSettingsClick={() => {
+				console.log("pppp")
+				goto('/languages')
+				}}
+			on:appSettingsClick={() => openAppSettings()}
+			on:logoutClick={() => goto('/logout')}
 		/>
 	</div>
 	<div class="pb-24" />
