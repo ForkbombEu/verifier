@@ -1,3 +1,10 @@
+## [1.21.2](https://github.com/ForkbombEu/verifier/compare/v1.21.1...v1.21.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* qr code shoul encode an intent url, not a json ([#71](https://github.com/ForkbombEu/verifier/issues/71)) ([0dcbfbe](https://github.com/ForkbombEu/verifier/commit/0dcbfbe99697f1c138a080bff21f4dee457e8e7c))
+
 ## [1.21.1](https://github.com/ForkbombEu/verifier/compare/v1.21.0...v1.21.1) (2024-09-10)
 
 
