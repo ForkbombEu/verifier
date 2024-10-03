@@ -1,3 +1,10 @@
+## [1.21.3](https://github.com/ForkbombEu/verifier/compare/v1.21.2...v1.21.3) (2024-10-03)
+
+
+### Bug Fixes
+
+* bumb mobile zencode ([89d059b](https://github.com/ForkbombEu/verifier/commit/89d059b44e0e04cb803cbf485fa2cce8aab34322))
+
 ## [1.21.2](https://github.com/ForkbombEu/verifier/compare/v1.21.1...v1.21.2) (2024-09-17)
 
 
