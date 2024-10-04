@@ -1,3 +1,10 @@
+## [1.21.5](https://github.com/ForkbombEu/verifier/compare/v1.21.4...v1.21.5) (2024-10-04)
+
+
+### Bug Fixes
+
+* Add title to the README.md ([1a24765](https://github.com/ForkbombEu/verifier/commit/1a247650dbdc0710c50431ca66047a76ece7a569))
+
 ## [1.21.4](https://github.com/ForkbombEu/verifier/compare/v1.21.3...v1.21.4) (2024-10-04)
 
 
