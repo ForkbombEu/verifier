@@ -1,3 +1,5 @@
+# DIDroom Verifier companion app
+
 ## Download the latest test release
 
 ![qr](https://github.com/ForkbombEu/verifier/assets/10379/32428fe8-45f5-4266-aa97-bd1a90754e93)
