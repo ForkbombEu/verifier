@@ -25,6 +25,7 @@ FIREBASE_APP_ID = ENV["FIREBASE_APP_ID"]
 SERVICE_ACCOUNT_PATH = ENV["SERVICE_ACCOUNT_PATH"]
 PULL_REQUEST_NUMBER = ENV["PULL_REQUEST_NUMBER"]
 PULL_REQUEST_TITLE = ENV["PULL_REQUEST_TITLE"]
+PUBLIC_BACKEND_URL = ENV["PUBLIC_BACKEND_URL"]
 
 
 platform :android do
@@ -33,7 +34,6 @@ platform :android do
   lane :alpha do
     sh "pnpm install -g @ionic/cli"
     sh "pnpm install"
-    sh "cp ../.env.example ../.env"
     sh "ionic cap sync android"
     sh "ionic cap build android --no-open"
     gradle(
@@ -63,7 +63,6 @@ platform :android do
   lane :distribute do
     sh "pnpm install -g @ionic/cli"
     sh "pnpm install"
-    sh "cp ../.env.example ../.env"
     sh "ionic cap sync android"
     sh "ionic cap build android --no-open"
     package = load_json(json_path: "./package.json")
