@@ -1,3 +1,10 @@
+## [1.21.4](https://github.com/ForkbombEu/verifier/compare/v1.21.3...v1.21.4) (2024-10-04)
+
+
+### Bug Fixes
+
+* use staging.didroom in test envoiroment ([#72](https://github.com/ForkbombEu/verifier/issues/72)) ([e63c2b2](https://github.com/ForkbombEu/verifier/commit/e63c2b254774869a6c6e2d2fbf0178faa012791c))
+
 ## [1.21.3](https://github.com/ForkbombEu/verifier/compare/v1.21.2...v1.21.3) (2024-10-03)
 
 
