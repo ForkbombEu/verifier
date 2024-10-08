@@ -14,6 +14,7 @@
 	export let label: string | undefined = undefined;
 	export let helperText: string | undefined = undefined;
 	export let placeholder: string | undefined = undefined;
+	export let hidable:boolean | undefined = undefined;
 </script>
 
 <FieldController {form} {fieldPath} let:value let:errorText let:updateValue>
@@ -22,6 +23,7 @@
 		name={fieldPath}
 		{label}
 		{placeholder}
+		{hidable}
 		helper-text={helperText}
 		error-text={errorText}
 		class:d-invalid={errorText}
