@@ -59,6 +59,7 @@
 							type="password"
 							placeholder={'password'}
 							label={'password'}
+							hidable
 						/>
 						<Checkbox fieldPath="conditions" {form}
 							>{m.Accept()}
