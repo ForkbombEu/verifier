@@ -1,3 +1,10 @@
+## [1.21.6](https://github.com/ForkbombEu/verifier/compare/v1.21.5...v1.21.6) (2024-10-08)
+
+
+### Bug Fixes
+
+* hide/show control on password input ([#77](https://github.com/ForkbombEu/verifier/issues/77)) ([0598bc3](https://github.com/ForkbombEu/verifier/commit/0598bc3d9692693adfad782186aaddd7f3d2f2c1))
+
 ## [1.21.5](https://github.com/ForkbombEu/verifier/compare/v1.21.4...v1.21.5) (2024-10-04)
 
 
