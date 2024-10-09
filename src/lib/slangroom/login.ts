@@ -8,17 +8,12 @@ const slangroom = new Slangroom(pocketbase);
 
 export const login = async (email: string, password: string) => {
 	const data = {
-        pb_address: backendUri,
+		pb_address: backendUri,
 		my_credentials: {
 			email,
 			password
 		}
 	};
-	try {
-		const res = await slangroom.execute(authenticate, {data});
-        return res.result.output;
-	} catch (e: unknown) {
-		log(e);
-		throw new Error(JSON.stringify(e));
-	}
+	const res = await slangroom.execute(authenticate, { data });
+	if (!res) throw new Error('Failed to login');
 };
