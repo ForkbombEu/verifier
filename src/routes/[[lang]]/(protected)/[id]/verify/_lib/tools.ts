@@ -3,6 +3,7 @@ import { Slangroom } from '@slangroom/core';
 import { http } from '@slangroom/http';
 import { helpers } from '@slangroom/helpers';
 import { zencode } from '@slangroom/zencode';
+import { location } from '@slangroom/location';
 import { getRuAndSid } from '$lib/preferences/sidRu';
 import verify from '$lib/mobile_zencode/verifier/verify.zen?raw';
 import verifyKeys from '$lib/mobile_zencode/verifier/verify.keys.json?raw';

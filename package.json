@@ -77,6 +77,7 @@
     "@slangroom/core": "^1.41.1",
     "@slangroom/helpers": "^1.41.1",
     "@slangroom/http": "^1.41.1",
+    "@slangroom/location": "^1.42.0",
     "@slangroom/pocketbase": "^1.41.1",
     "@slangroom/qrcode": "^1.41.1",
     "@slangroom/zencode": "^1.41.1",
