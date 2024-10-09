@@ -1,3 +1,10 @@
+## [1.21.8](https://github.com/ForkbombEu/verifier/compare/v1.21.7...v1.21.8) (2024-10-09)
+
+
+### Bug Fixes
+
+* add location plugin to slangroom initialization ([#85](https://github.com/ForkbombEu/verifier/issues/85)) ([6229499](https://github.com/ForkbombEu/verifier/commit/6229499b83b980875dc0430ea689eae6319d8ccb))
+
 ## [1.21.7](https://github.com/ForkbombEu/verifier/compare/v1.21.6...v1.21.7) (2024-10-09)
 
 
