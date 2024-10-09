@@ -9,6 +9,8 @@
 
 	let feedback: Feedback = {};
 
+	let scrollBox:HTMLElement
+
 	//
 	const schema = z.object({
 		email: z.string().email(),
@@ -32,14 +34,18 @@
 					message: String(e),
 					feedback: 'Failed to authenticate, maybe wrong email or password'
 				};
+				scrollBox.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
 			}
 		}
 	});
 </script>
 
-<div class="flex min-h-screen flex-col place-content-between overflow-y-scroll">
+<div class="flex h-screen flex-col place-content-between overflow-y-scroll" >
 	<d-feedback {...feedback} />
-	<div class="grow">
+	<div class="grow" bind:this={scrollBox}>
 		<d-background-illustration {background}>
 			<d-illustration illustration="pidgeon"> </d-illustration></d-background-illustration
 		>
