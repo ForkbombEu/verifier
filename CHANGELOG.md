@@ -1,3 +1,10 @@
+## [1.21.7](https://github.com/ForkbombEu/verifier/compare/v1.21.6...v1.21.7) (2024-10-09)
+
+
+### Bug Fixes
+
+* error message on wrong login ([#80](https://github.com/ForkbombEu/verifier/issues/80)) ([328960a](https://github.com/ForkbombEu/verifier/commit/328960aa20f6a9258b0ab3e89e1f61da9f6cf8be))
+
 ## [1.21.6](https://github.com/ForkbombEu/verifier/compare/v1.21.5...v1.21.6) (2024-10-08)
 
 
