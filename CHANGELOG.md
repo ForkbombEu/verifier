@@ -1,3 +1,11 @@
+## [1.21.9](https://github.com/ForkbombEu/verifier/compare/v1.21.8...v1.21.9) (2024-10-09)
+
+
+### Bug Fixes
+
+* on login error focus on feedback ([#84](https://github.com/ForkbombEu/verifier/issues/84)) ([af33e20](https://github.com/ForkbombEu/verifier/commit/af33e200187877b923a3b020e5b240df8575a94d))
+* tag versioning ([#86](https://github.com/ForkbombEu/verifier/issues/86)) ([147db5c](https://github.com/ForkbombEu/verifier/commit/147db5c9ea085c84af1a39dbf662c0b17161ac84))
+
 ## [1.21.8](https://github.com/ForkbombEu/verifier/compare/v1.21.7...v1.21.8) (2024-10-09)
 
 
