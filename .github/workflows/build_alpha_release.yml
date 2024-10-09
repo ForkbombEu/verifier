@@ -14,18 +14,10 @@ jobs:
       release: ${{ steps.tag_release.outputs.release }}
       version: ${{ steps.tag_release.outputs.version }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js 18
-        uses: actions/setup-node@v4
+      - uses: dyne/pnpm@main
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 8
-      - name: Install deps
-        run: |
-          pnpm i
+          pnpm-version: 8
       - name: Tag release
         id: tag_release
         env:
@@ -47,22 +39,14 @@ jobs:
   build_android:
     runs-on: ubuntu-latest
     needs: semantic-release
+    if: ${{ needs.semantic-release.outputs.release == 'True' }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Git Sumbodule Update
-        run: |
-          git submodule update --init
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: dyne/pnpm@main
         with:
+          submodules: true
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - uses: actions/cache@v3
+          pnpm-version: 8
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -95,32 +79,11 @@ jobs:
         with:
           lane: alpha
       - run: mv release.apk verifier.apk
-      - name: upload binary artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: verifier
-          path: |
-            verifier.apk
-
-  
-
-  draft-release:
-    permissions:
-      contents: write
-    needs: semantic-release
-    runs-on: ubuntu-latest
-    if: ${{ needs.semantic-release.outputs.release == 'True' }}
-    steps:
-      - name: download binary artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: |
-            release
       - name: relase all binary artifacts
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            release/verifier/*
+            verifier.apk
           draft: false
           prerelease: false
           fail_on_unmatched_files: true
