@@ -11,7 +11,7 @@ import { log } from '$lib/log';
 import { saveVerifiedSid } from '$lib/preferences/verifiedSid';
 import { goto } from '$app/navigation';
 
-const slangroom = new Slangroom(http, helpers, zencode);
+const slangroom = new Slangroom(http, helpers, zencode, location);
 export const jwsToIdSuccess = 'Signature_verification_successful' as const;
 export const jwsToIdFailure = 'Signature_verification_error' as const;
 export type jwsToIdResult = typeof jwsToIdSuccess | typeof jwsToIdFailure;
