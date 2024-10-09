@@ -69,7 +69,7 @@ jobs:
         with:
           ruby-version: '3.0'
           bundler-cache: true
-      - uses: maierj/fastlane-action@v3.0.0
+      - uses: maierj/fastlane-action@v3.1.0
         env:
           KEYSTORE_PATH: ${{ steps.android_keystore.outputs.filePath }}
           KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
@@ -80,7 +80,7 @@ jobs:
           lane: alpha
       - run: mv release.apk verifier.apk
       - name: relase all binary artifacts
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             verifier.apk
