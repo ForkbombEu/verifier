@@ -103,25 +103,12 @@
 		<!-- for web test no tok provided-->
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
-				<div
-					class="flex flex-row items-center justify-center gap-1 rounded-lg bg-primary px-2 py-4"
-				>
-					<div class="flex-grow">
-						<img src={qr} alt="qrCode" class="w-full" />
-					</div>
-					<div
-						class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
-					>
-						<d-text size="l" class="w-max">Session ID:</d-text>
-						<d-heading size="s">{id}</d-heading>
-						<d-text size="m"
-							>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
-						>
-						<d-text size="m"
-							>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
-						>
-					</div>
-				</div>
+				<d-qr-code
+					{qr}
+					generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+					generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+					session-id={id}
+				/>
 				<d-button
 					color="accent"
 					expand
@@ -137,25 +124,12 @@
 				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
-			<div
-				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
-			>
-				<div class="flex-grow">
-					<img src={qr} alt="qrCode" class="w-full" />
-				</div>
-				<div
-					class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
-				>
-					<d-text size="l" class="w-max">Session ID:</d-text>
-					<d-heading size="s">{id}</d-heading>
-					<d-text size="m"
-						>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
-					>
-					<d-text size="m"
-						>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
-					>
-				</div>
-			</div>
+			<d-qr-code
+				{qr}
+				generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+				generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+				session-id={id}
+			/>
 			<d-button
 				color="accent"
 				expand
