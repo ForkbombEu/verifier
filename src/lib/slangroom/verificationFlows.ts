@@ -23,7 +23,32 @@ export type VerificationFlow = {
 export type Expand = {
 	organization: Organization;
 	relying_party: RelyingParty;
+	template: Template;
 };
+
+export interface Template {
+	allow_extra_attributes: boolean;
+	collectionId: string;
+	collectionName: string;
+	created: string;
+	description: string;
+	id: string;
+	is_preset: boolean;
+	name: string;
+	organization: string;
+	public: boolean;
+	schema: Schema;
+	type: string;
+	updated: string;
+	zencode_data: string;
+	zencode_script: string;
+}
+
+export interface Schema {
+	type: string;
+	properties: Record<string, { type: string; title: string }>;
+	required: string[];
+}
 
 export type Organization = {
 	avatar: string;
@@ -87,7 +112,7 @@ export const getVerificationFlow = async (id: string): Promise<VerificationFlow>
 			pb_address: backendUri,
 			show_parameters: {
 				collection: 'verification_flows',
-				expand: 'relying_party, template',
+				expand: 'relying_party, template, organization',
 				id
 			}
 		};
@@ -96,7 +121,7 @@ export const getVerificationFlow = async (id: string): Promise<VerificationFlow>
 		//@ts-expect-error output needs to be typed
 		return res.result?.output;
 	} catch (e: unknown) {
-        log(JSON.stringify(e));
+		log(JSON.stringify(e));
 		throw new Error(JSON.stringify(e));
 	}
 };

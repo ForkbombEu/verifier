@@ -10,12 +10,12 @@
 
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
-	import { backendUri } from '$lib/backendUri';
+	import { backendUri, filesUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
 	import { log } from '$lib/log';
 	import { onIncomingNotification } from './_lib/tools';
 
-	export let data: any;
+	export let data;
 
 	const { verificationFlow, user } = data;
 
@@ -49,7 +49,7 @@
 
 	const registerQr = async (t: string) => {
 		const data = {
-			id: user.id,
+			id: user!.id,
 			template: verificationFlow.template,
 			relying_party: verificationFlow.expand.relying_party.endpoint,
 			pb_url: backendUri,
@@ -95,11 +95,24 @@
 
 <d-header back-button on:backButtonClick={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
-	<div class="flex flex-col justify-center gap-8 text-center">
-		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
-		<div class="flex w-full items-center justify-center gap-2 py-12">
-			<d-heading size="s">{verificationFlow.name}</d-heading>
-		</div>
+	<d-vertical-stack gap={4}>
+		<d-vertical-stack class="justify-center text-center">
+			<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
+			<d-horizontal-stack class="w-full items-center justify-center">
+				<d-avatar
+					size="l"
+					name={verificationFlow.name}
+					src={filesUri(
+						verificationFlow.expand.organization.avatar,
+						verificationFlow.expand.organization.collectionName,
+						verificationFlow.expand.organization.id
+					)}
+					shape="square"
+				/>
+				<d-heading size="s">{verificationFlow.name}</d-heading>
+			</d-horizontal-stack>
+			<d-text size="l">{verificationFlow.expand.organization.name} </d-text>
+		</d-vertical-stack>
 		<!-- for web test no tok provided-->
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
@@ -139,5 +152,5 @@
 			>
 			<Countdown initial={generationDate.unix()} {expirationInterval} />
 		{/if}
-	</div>
+	</d-vertical-stack>
 </ion-content>
