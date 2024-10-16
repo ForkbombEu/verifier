@@ -1,6 +1,6 @@
 {
   "name": "verifier",
-  "version": "1.21.9",
+  "version": "1.21.10",
   "private": true,
   "scripts": {
     "dev": "vite dev --host",
