@@ -10,12 +10,12 @@
 
 	import cardToQr from '$lib/mobile_zencode/verifier/card_to_qr.zen?raw';
 	import cardToQrKeys from '$lib/mobile_zencode/verifier/card_to_qr.keys.json?raw';
-	import { backendUri } from '$lib/backendUri';
+	import { backendUri, filesUri } from '$lib/backendUri';
 	import { saveRuAndSid } from '$lib/preferences/sidRu';
 	import { log } from '$lib/log';
 	import { onIncomingNotification } from './_lib/tools';
 
-	export let data: any;
+	export let data;
 
 	const { verificationFlow, user } = data;
 
@@ -49,7 +49,7 @@
 
 	const registerQr = async (t: string) => {
 		const data = {
-			id: user.id,
+			id: user!.id,
 			template: verificationFlow.template,
 			relying_party: verificationFlow.expand.relying_party.endpoint,
 			pb_url: backendUri,
@@ -95,33 +95,33 @@
 
 <d-header back-button on:backButtonClick={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
-	<div class="flex flex-col justify-center gap-8 text-center">
-		<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
-		<div class="flex w-full items-center justify-center gap-2 py-12">
-			<d-heading size="s">{verificationFlow.name}</d-heading>
-		</div>
+	<d-vertical-stack gap={4}>
+		<d-vertical-stack class="justify-center text-center">
+			<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
+			<d-horizontal-stack class="w-full items-center justify-center">
+				<d-avatar
+					size="l"
+					name={verificationFlow.name}
+					src={filesUri(
+						verificationFlow.expand.organization.avatar,
+						verificationFlow.expand.organization.collectionName,
+						verificationFlow.expand.organization.id
+					)}
+					shape="square"
+				/>
+				<d-heading size="s">{verificationFlow.name}</d-heading>
+			</d-horizontal-stack>
+			<d-text size="l">{verificationFlow.expand.organization.name} </d-text>
+		</d-vertical-stack>
 		<!-- for web test no tok provided-->
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
-				<div
-					class="flex flex-row items-center justify-center gap-1 rounded-lg bg-primary px-2 py-4"
-				>
-					<div class="flex-grow">
-						<img src={qr} alt="qrCode" class="w-full" />
-					</div>
-					<div
-						class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
-					>
-						<d-text size="l" class="w-max">Session ID:</d-text>
-						<d-heading size="s">{id}</d-heading>
-						<d-text size="m"
-							>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
-						>
-						<d-text size="m"
-							>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
-						>
-					</div>
-				</div>
+				<d-qr-code
+					{qr}
+					generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+					generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+					session-id={id}
+				/>
 				<d-button
 					color="accent"
 					expand
@@ -137,25 +137,12 @@
 				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
-			<div
-				class="flex flex-row items-center justify-center gap-1 rounded-[0px_8px_8px_0px] bg-primary px-2 py-4"
-			>
-				<div class="flex-grow">
-					<img src={qr} alt="qrCode" class="w-full" />
-				</div>
-				<div
-					class="flex flex-shrink flex-col items-center justify-center gap-1 px-2 py-4 text-center"
-				>
-					<d-text size="l" class="w-max">Session ID:</d-text>
-					<d-heading size="s">{id}</d-heading>
-					<d-text size="m"
-						>{generationDate.day()}/{generationDate.month()}/{generationDate.year()}</d-text
-					>
-					<d-text size="m"
-						>{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}</d-text
-					>
-				</div>
-			</div>
+			<d-qr-code
+				{qr}
+				generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+				generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+				session-id={id}
+			/>
 			<d-button
 				color="accent"
 				expand
@@ -165,5 +152,5 @@
 			>
 			<Countdown initial={generationDate.unix()} {expirationInterval} />
 		{/if}
-	</div>
+	</d-vertical-stack>
 </ion-content>
