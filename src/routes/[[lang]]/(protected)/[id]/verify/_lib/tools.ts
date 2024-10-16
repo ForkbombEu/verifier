@@ -25,11 +25,12 @@ export type JwsToIdResponse = {
 const parseVerificationError = (e: Error): string => {
 	try {
 		const message = JSON.parse(e.message);
-		const trace = message.filter((s) => s.startsWith('J64 TRACE:'))[0];
+		const trace = message.filter((s: string) => s.startsWith('J64 TRACE:'))[0];
 		const errorBase64 = trace.split('J64 TRACE: ')[1];
 		const errorArray = JSON.parse(atob(errorBase64));
-		const errors = errorArray.filter((s) => s.startsWith('[!]'));
-		return errors.join('\n');
+		const errors = errorArray.filter((s: string) => s.startsWith('[!]'));
+
+    return errors.join('\n');
 	} catch {
 		return e.message;
 	}
@@ -62,12 +63,13 @@ export const jwsToId = async (jws: string): Promise<JwsToIdResponse> => {
 			id,
 			...input_to_custom_code
 		};
+    if (!inputToCustomCode) throw new Error(`Could not find input to custom code for id ${id}`);
 		// Execute custom code
 		const customCodeResult = await slangroom.execute(code, {
 			data: inputToCustomCode,
 			keys: JSON.parse(keys)
 		});
-		console.log(customCodeResult);
+
 		return { result, id };
 	} catch (e: unknown) {
 		const message = parseVerificationError(e as Error);

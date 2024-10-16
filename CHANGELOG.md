@@ -1,3 +1,10 @@
+## [1.21.10](https://github.com/ForkbombEu/verifier/compare/v1.21.9...v1.21.10) (2024-10-16)
+
+
+### Bug Fixes
+
+* stack qr code and info vertically ([#88](https://github.com/ForkbombEu/verifier/issues/88)) ([a1e6cc1](https://github.com/ForkbombEu/verifier/commit/a1e6cc13448b159e76867828018355ccaf5d4189))
+
 ## [1.21.9](https://github.com/ForkbombEu/verifier/compare/v1.21.8...v1.21.9) (2024-10-09)
 
 
