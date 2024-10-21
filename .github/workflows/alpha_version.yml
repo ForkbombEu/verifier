@@ -30,7 +30,7 @@ jobs:
         id: playstore_keystore
         with:
           fileName: android_keystore.keystore
-          encodedString: ${{ secrets.ANDROID_KEYSTORE_FILE }}
+          encodedString: ${{ secrets.PLAYSTORE_KEYSTORE }}
       - name: Decode Service Account File for PlayStore
         uses: timheuer/base64-to-file@v1
         id: play_console_account
