@@ -45,8 +45,8 @@ jobs:
         env:
           KEYSTORE_PATH: ${{ steps.playstore_keystore.outputs.filePath }}
           SERVICE_ACCOUNT_PATH: ${{ steps.play_console_account.outputs.filePath }}
-          KEYSTORE_KEY_ALIAS: ${{ secrets.PLAYSTORE_KEYSTORE_KEY_ALIAS }}
-          KEYSTORE_KEY_PASSWORD: ${{ secrets.PALYSTORE_KEYSTORE_KEY_PASSWORD }}
+          KEYSTORE_KEY_ALIAS: ${{ secrets.PLAYSTORE_KEYSTORE_ALIAS }}
+          KEYSTORE_KEY_PASSWORD: ${{ secrets.PLAYSTORE_KEYSTORE_KEY_PASSWORD }}
           KEYSTORE_STORE_PASSWORD: ${{ secrets.PLAYSTORE_KEYSTORE_PASSWORD }}
           PUBLIC_BACKEND_URL: ${{ vars.PUBLIC_BACKEND_URL }}
         with:
