@@ -107,7 +107,6 @@ platform :android do
   end
     
   lane :play do
-      sh "echo #{PUBLIC_BACKEND_URL}"
       sh "pnpm install -g @ionic/cli"
       sh "pnpm install"
       sh "ionic cap sync android"
