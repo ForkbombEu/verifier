@@ -11,6 +11,7 @@ jobs:
       - uses: dyne/pnpm@main
         with:
           submodules: true
+          node-version: '20.11.1'
       - uses: actions/cache@v4
         with:
           path: |
