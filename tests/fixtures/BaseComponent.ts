@@ -30,7 +30,7 @@ export abstract class BaseComponent {
 export function pickOneComponent<T extends BaseComponent>(
 	ComponentClass: new (page: Page) => T,
 	page: Page,
-	options: { nth?: number }
+	options?: { nth?: number }
 ): T {
 	const instance = new ComponentClass(page);
 	if (options?.nth !== undefined) {
