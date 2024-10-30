@@ -22,6 +22,7 @@
     "postinstall": "paraglide-js compile --project ./project.inlang"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
     "@capacitor/cli": "^6.1.2",
     "@inlang/paraglide-js": "1.2.5",
     "@inlang/paraglide-js-adapter-sveltekit": "^0.4.1",
