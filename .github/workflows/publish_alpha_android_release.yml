@@ -1,4 +1,4 @@
-name: 🤖🎯 Publish Android Beta Version
+name: 🤖🌈 Publish android alpha version
 
 on:
   pull_request:
@@ -8,8 +8,8 @@ jobs:
   distribute:
     uses: ForkbombEu/ship-capacitor-apps/.github/workflows/ship_android.yml@v1
     with:
-      backend-url: ${{ vars.PUBLIC_BACKEND_URL }}
-      lane: beta
+      backend-url: ${{ github.env.test.vars.PUBLIC_BACKEND_URL }}
+      lane: alpha
     secrets:
       keystore-file: ${{ secrets.PLAYSTORE_KEYSTORE }}
       service-account: ${{ secrets.PLAYSTORE_SERVICE_ACCOUNT }}
