@@ -54,14 +54,8 @@
 		name="viewport"
 		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
 	/>
-	<script
-		type="module"
-		src="https://cdn.jsdelivr.net/npm/@didroom/components@1.31/dist/didroom-components/didroom-components.esm.js"
-	></script>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/@didroom/components@1.31/dist/didroom-components/didroom-components.css"
-	/>
+	<script type="module" src="/components/didroom-components/didroom-components.esm.js"></script>
+	<link rel="stylesheet" href="/components/didroom-components/didroom-components.css" />
 </svelte:head>
 
 <ParaglideJS {i18n}>

@@ -17,7 +17,6 @@ jobs:
       - uses: dyne/pnpm@main
         with:
           node-version: 20
-          pnpm-version: 8
       - name: Tag release
         id: tag_release
         env:
@@ -45,7 +44,6 @@ jobs:
         with:
           submodules: true
           node-version: 20
-          pnpm-version: 8
       - uses: actions/cache@v4
         with:
           path: |
