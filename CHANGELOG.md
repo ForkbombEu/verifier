@@ -1,3 +1,12 @@
+## [1.21.11](https://github.com/ForkbombEu/verifier/compare/v1.21.10...v1.21.11) (2024-12-23)
+
+
+### Bug Fixes
+
+* change app launcer icon in android (was not complyant with android policy) ([c2fe1e2](https://github.com/ForkbombEu/verifier/commit/c2fe1e2299699e68e7159151d52042b887b5059f))
+* splash screens backgrounds ([b078566](https://github.com/ForkbombEu/verifier/commit/b0785660c5b8aa15c34c2893dfde1dff5e64fab3))
+* update android assets (splashs and icons) ([c7154fe](https://github.com/ForkbombEu/verifier/commit/c7154fead73b454aeefe8465d969d2b75acb0b27))
+
 ## [1.21.10](https://github.com/ForkbombEu/verifier/compare/v1.21.9...v1.21.10) (2024-10-16)
 
 
