@@ -9,7 +9,7 @@ jobs:
     with:
       backend-url: ${{github.env.test.vars.PUBLIC_BACKEND_URL}}
       lane: ios testflight
-      initial-build-number: 3
+      initial-build-number: "3"
       DEMO_USER: ${{github.env.test.vars.DEMO_USER}}
       DEMO_PASSWORD: ${{github.env.test.vars.DEMO_PASSWORD}}
     secrets:
