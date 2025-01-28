@@ -1,6 +1,6 @@
 {
 	"name": "verifier",
-	"version": "1.21.11",
+	"version": "1.22.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",
@@ -69,12 +69,14 @@
 		"@capacitor/haptics": "^6.0.1",
 		"@capacitor/ios": "^6.1.2",
 		"@capacitor/keyboard": "^6.0.2",
+		"@capacitor/network": "^6.0.3",
 		"@capacitor/preferences": "^6.0.2",
 		"@capacitor/push-notifications": "^6.0.2",
 		"@capacitor/status-bar": "^6.0.1",
 		"@fontsource-variable/gantari": "^5.1.0",
 		"@fontsource/poppins": "^5.1.0",
 		"@ionic/core": "^7.8.6",
+		"@lottiefiles/svelte-lottie-player": "^0.3.1",
 		"@slangroom/core": "^1.42.0",
 		"@slangroom/helpers": "^1.42.0",
 		"@slangroom/http": "^1.42.0",
