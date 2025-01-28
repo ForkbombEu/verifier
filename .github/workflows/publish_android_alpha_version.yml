@@ -1,0 +1,18 @@
+name: 🤖🌈 Publish android alpha version
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  distribute:
+    uses: ForkbombEu/ship-capacitor-apps/.github/workflows/ship_android.yml@main
+    with:
+      backend-url: ${{ github.env.test.vars.PUBLIC_BACKEND_URL }}
+      lane: alpha
+    secrets:
+      keystore-file: ${{ secrets.BUNDLE_BETA_PLAYSTORE }}
+      service-account: ${{ secrets.PLAYSTORE_SERVICE_ACCOUNT }}
+      keystore-alias: ${{ secrets.BUNDLE_BETA_PLAYSTORE_ALIAS }}
+      keystore-password: ${{ secrets.BUNDLE_BETA_PASSWORD }}
+      keystore-key-password: ${{ secrets.BUNDLE_BETA_PASSWORD }}
