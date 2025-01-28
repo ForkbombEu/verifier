@@ -11,7 +11,7 @@ jobs:
       backend-url: ${{ github.env.test.vars.PUBLIC_BACKEND_URL }}
       lane: alpha
     secrets:
-      keystore-file: ${{ secrets.BUNDLE_BETA_PLAYSTORE }}
+      keystore-file: ${{ secrets.ANDROID_KEYSTORE_FILE }}
       service-account: ${{ secrets.PLAYSTORE_SERVICE_ACCOUNT }}
       keystore-alias: ${{ secrets.BUNDLE_BETA_PLAYSTORE_ALIAS }}
       keystore-password: ${{ secrets.BUNDLE_BETA_PASSWORD }}
