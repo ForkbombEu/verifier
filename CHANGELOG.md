@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/ForkbombEu/verifier/compare/v1.21.11...v1.22.0) (2025-01-28)
+
+
+### Features
+
+* message if no internet connection ([#100](https://github.com/ForkbombEu/verifier/issues/100)) ([8677a69](https://github.com/ForkbombEu/verifier/commit/8677a692f2c1017731a0fd8631563c04f89020ab))
+
 ## [1.21.11](https://github.com/ForkbombEu/verifier/compare/v1.21.10...v1.21.11) (2024-12-23)
 
 
