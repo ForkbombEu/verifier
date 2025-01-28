@@ -14,6 +14,8 @@ PODS:
     - Capacitor
   - CapacitorNativeSettings (6.0.1):
     - Capacitor
+  - CapacitorNetwork (6.0.3):
+    - Capacitor
   - CapacitorPreferences (6.0.2):
     - Capacitor
   - CapacitorPushNotifications (6.0.2):
@@ -30,6 +32,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/keyboard`)"
   - "CapacitorNativeSettings (from `../../node_modules/.pnpm/capacitor-native-settings@6.0.1_@capacitor+core@6.1.2/node_modules/capacitor-native-settings`)"
+  - "CapacitorNetwork (from `../../node_modules/.pnpm/@capacitor+network@6.0.3_@capacitor+core@6.1.2/node_modules/@capacitor/network`)"
   - "CapacitorPreferences (from `../../node_modules/.pnpm/@capacitor+preferences@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/preferences`)"
   - "CapacitorPushNotifications (from `../../node_modules/.pnpm/@capacitor+push-notifications@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/push-notifications`)"
   - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar`)"
@@ -51,6 +54,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/.pnpm/@capacitor+keyboard@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/keyboard"
   CapacitorNativeSettings:
     :path: "../../node_modules/.pnpm/capacitor-native-settings@6.0.1_@capacitor+core@6.1.2/node_modules/capacitor-native-settings"
+  CapacitorNetwork:
+    :path: "../../node_modules/.pnpm/@capacitor+network@6.0.3_@capacitor+core@6.1.2/node_modules/@capacitor/network"
   CapacitorPreferences:
     :path: "../../node_modules/.pnpm/@capacitor+preferences@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/preferences"
   CapacitorPushNotifications:
@@ -59,18 +64,19 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
-  Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
-  CapacitorApp: 0bc633b4eae40a1f32cd2834788fad3bc42da6a1
-  CapacitorCamera: ed022171dbf3853e68eec877b4d78995378af6b7
+  Capacitor: 69c7f687aabb8d85e543497411e40638b5cc08c0
+  CapacitorApp: f51c08c64df914fc934239fd1b3fc809d62a02f6
+  CapacitorCamera: 65a0d1235114a6a5042e664d6da8d213927f7aa0
   CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
-  CapacitorDevice: 7097a1deb4224b77fd13a6e60a355d0062a5d772
-  CapacitorHaptics: fe689ade56ef20ec9b041a753c6da70c5d8ec9a9
-  CapacitorKeyboard: 2700f9b18687be021e28b5a09b59eb151a46d5e0
-  CapacitorNativeSettings: 1ce5585ff07b161616cd0a795702637316677af2
-  CapacitorPreferences: e8284bf740cf8c6d3f25409af3c01df87dfeb5a1
-  CapacitorPushNotifications: ccd797926c030acad3d5498ef452c735c90a2c89
-  CapacitorStatusBar: b81d4fb5d4e0064c712018071b3ab4b810b39a63
+  CapacitorDevice: da1884f895e17992648b27f6c8ee2be72cd0ce2e
+  CapacitorHaptics: 05d33e20e394b1977dfd2a00a2621e04098164c1
+  CapacitorKeyboard: 5bf4458dd989b56a60ea15c92cbca5fbfae6e9f9
+  CapacitorNativeSettings: 7669610adda7b2747fecab7c5e1b6329520d8914
+  CapacitorNetwork: ef75d8208f0974a2de3f98136bf9684524798f5c
+  CapacitorPreferences: 997d375b1962f98511e8b3d27a24d90cb8ca87fe
+  CapacitorPushNotifications: 88f40c5f06dfe54f2c0619173e11ecbff8661a2f
+  CapacitorStatusBar: 9ed7f06318fd436917072a9bf60fda56d12c8bdb
 
-PODFILE CHECKSUM: bea64466e0fa05b93c74d66b271669e78fc15c93
+PODFILE CHECKSUM: c5405413b328fbc4c9d5a703586a5e45862909f0
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.16.2

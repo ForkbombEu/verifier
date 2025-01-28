@@ -10,11 +10,13 @@
 	import '../theme/variables.css';
 
 	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
-	import { i18n, r } from '$lib/i18n';
+	import { i18n, r, m } from '$lib/i18n';
 	import { removeOldRuAndSid } from '$lib/preferences/sidRu';
 	import HiddenLogsButton from '$lib/components/molecules/HiddenLogsButton.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { App } from '@capacitor/app';
+	import { Network } from '@capacitor/network';
+	import FingerPrint from '$lib/assets/lottieFingerPrint/FingerPrint.svelte';
 
 	const controller = new AbortController();
 	const signal = controller.signal;
@@ -26,7 +28,13 @@
 		},
 		false
 	);
-	onMount(() => {
+	let isConnected: boolean;
+
+	onMount(async () => {
+		isConnected = (await Network.getStatus()).connected;
+		Network.addListener('networkStatusChange', (status) => {
+			isConnected = status.connected;
+		});
 		document.addEventListener(
 			'ionBackButton',
 			(ev: any) => {
@@ -61,6 +69,19 @@
 <ParaglideJS {i18n}>
 	<HiddenLogsButton />
 	<ion-app>
+		<d-loading loading={!isConnected}>
+			<FingerPrint />
+			{#if !isConnected}
+				<d-vertical-stack class="ion-padding" gap={8}>
+					<d-text size="xl"
+						>{m.It_seems_that_the_wallet_is_unable_to_connect_to_the_Internet_please_make_sure_your_internet_connection_is_working_and_retry()}</d-text
+					>
+					<d-button color="accent" on:click={() => App.exitApp()} aria-hidden expand
+						>{m.Close()}</d-button
+					>
+				</d-vertical-stack>
+			{/if}
+		</d-loading>
 		<slot />
 	</ion-app>
 </ParaglideJS>
