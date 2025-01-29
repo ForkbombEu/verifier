@@ -16,3 +16,4 @@ jobs:
       keystore-alias: ${{ secrets.PLAYSTORE_KEYSTORE_ALIAS }}
       keystore-password: ${{ secrets.PLAYSTORE_KEYSTORE_PASSWORD }}
       keystore-key-password: ${{ secrets.PLAYSTORE_KEYSTORE_KEY_PASSWORD }}
+      package-name: com.didroom.verifier
