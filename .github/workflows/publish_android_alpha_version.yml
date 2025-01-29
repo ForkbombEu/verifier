@@ -10,10 +10,10 @@ jobs:
     with:
       backend-url: ${{ github.env.test.vars.PUBLIC_BACKEND_URL }}
       lane: alpha
+      package-name: com.didroom.verifier
     secrets:
       keystore-file: ${{ secrets.PLAYSTORE_KEYSTORE }}
       service-account: ${{ secrets.PLAYSTORE_SERVICE_ACCOUNT }}
       keystore-alias: ${{ secrets.PLAYSTORE_KEYSTORE_ALIAS }}
       keystore-password: ${{ secrets.PLAYSTORE_KEYSTORE_PASSWORD }}
       keystore-key-password: ${{ secrets.PLAYSTORE_KEYSTORE_KEY_PASSWORD }}
-      package-name: com.didroom.verifier
