@@ -14,7 +14,7 @@ jobs:
       DEMO_PASSWORD: ${{ github.env.ios.vars.USER_PASSWORD }}
     secrets:
       APP_STORE_CONNECT_TEAM_ID: ${{ secrets.APP_STORE_CONNECT_TEAM_ID }}
-      BUNDLE_IDENTIFIER: ${{ secrets.BUNDLE_IDENTIFIER }}
+      BUNDLE_IDENTIFIER: com.didroom.verifier
       BUILD_CERTIFICATE_BASE64: ${{ secrets.IOS_BUILD_CERTIFICATE }}
       BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_BUILD_PROVISION_PROFILE }}
       APPLE_KEY_ID: ${{ secrets.APPLE_KEY_ID }}
