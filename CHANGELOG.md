@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/ForkbombEu/verifier/compare/v1.22.0...v1.23.0) (2025-01-29)
+
+
+### Features
+
+* release in app/play store with automation ([#101](https://github.com/ForkbombEu/verifier/issues/101)) ([81c2aa7](https://github.com/ForkbombEu/verifier/commit/81c2aa72f3ddb310d86595a54d7cc03e3a1728c8))
+
 # [1.22.0](https://github.com/ForkbombEu/verifier/compare/v1.21.11...v1.22.0) (2025-01-28)
 
 
