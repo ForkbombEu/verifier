@@ -1,0 +1,29 @@
+name: 🍏✨ Publish on TestFlight
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  testflight:
+    uses: ForkbombEu/ship-capacitor-apps/.github/workflows/ship_ios.yml@main
+    with:
+      backend-url: ${{github.env.test.vars.PUBLIC_BACKEND_URL}}
+      lane: ios testflight
+      initial-build-number: "3"
+      DEMO_USER: ${{github.env.test.vars.DEMO_USER}}
+      DEMO_PASSWORD: ${{github.env.test.vars.DEMO_PASSWORD}}
+      CONTACT_EMAIL: info@forkbomb.eu
+      CONTACT_FIRST_NAME: Andrea
+      CONTACT_LAST_NAME: D'Intino
+      CONTACT_PHONE: "+4521627918"
+    secrets:
+      APP_STORE_CONNECT_TEAM_ID: ${{ secrets.APP_STORE_CONNECT_TEAM_ID }}
+      BUNDLE_IDENTIFIER: com.didroom.verifier
+      BUILD_CERTIFICATE_BASE64: ${{ secrets.IOS_BUILD_CERTIFICATE }}
+      BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_BUILD_PROVISION_PROFILE }}
+      APPLE_KEY_ID: ${{ secrets.APPLE_KEY_ID }}
+      APPLE_ISSUER_ID: ${{ secrets.APPLE_ISSUER_ID }}
+      APPLE_KEY_CONTENT: ${{ secrets.APPLE_KEY_CONTENT }}
+      APPLE_PROFILE_NAME: ${{ secrets.APPLE_PROFILE_NAME }}
+      P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
