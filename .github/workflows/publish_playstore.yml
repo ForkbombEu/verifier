@@ -1,0 +1,18 @@
+name: 🤖🌈 Publish on android play store in production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  distribute_android:
+    uses: ForkbombEu/ship-capacitor-apps/.github/workflows/ship_android.yml@main
+    with:
+      backend-url: ${{ vars.PUBLIC_BACKEND_URL }}
+      lane: production
+      package-name: com.didroom.verifier
+    secrets:
+      keystore-file: ${{ secrets.PLAYSTORE_KEYSTORE }}
+      service-account: ${{ secrets.PLAYSTORE_SERVICE_ACCOUNT }}
+      keystore-alias: ${{ secrets.PLAYSTORE_KEYSTORE_ALIAS }}
+      keystore-password: ${{ secrets.PLAYSTORE_KEYSTORE_PASSWORD }}
+      keystore-key-password: ${{ secrets.PLAYSTORE_KEYSTORE_KEY_PASSWORD }}
