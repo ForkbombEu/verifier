@@ -1,8 +1,7 @@
 name: 🤖🌈 Submit for review on App Store
 
 on:
-  push:
-    branches: ['main']
+  workflow_dispatch:
 
 jobs:
   distribute_ios:
