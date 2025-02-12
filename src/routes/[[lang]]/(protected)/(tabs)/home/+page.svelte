@@ -18,7 +18,7 @@
 			<d-credential-service
 				href={r(`/${vf.id}/verify/`)}
 				name={vf.name}
-				logoSrc={filesUri(
+				logo-src={filesUri(
 					vf.expand.organization.avatar,
 					vf.expand.organization.collectionName,
 					vf.expand.organization.id
