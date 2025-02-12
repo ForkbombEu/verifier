@@ -1,3 +1,21 @@
+# [1.24.0](https://github.com/ForkbombEu/verifier/compare/v1.23.0...v1.24.0) (2025-02-12)
+
+
+### Bug Fixes
+
+* add ITSAppUsesNonExemptEncryption key in ios info.plist ([37e0eff](https://github.com/ForkbombEu/verifier/commit/37e0eff8b9bda558401d5d2fe6976df0e5b0221d))
+* back button behavior was wrong ([600943e](https://github.com/ForkbombEu/verifier/commit/600943ebf8947baf95a57aa7c01a6b846457de5f))
+* broken link to privacy policy ([1d61604](https://github.com/ForkbombEu/verifier/commit/1d616041a420f70031a4f0bc7cfbaafa0130374a))
+* deliver only on iphone ([9e69b64](https://github.com/ForkbombEu/verifier/commit/9e69b64683e5101471ebc8584028e40babf82520))
+* semantic release was disabled, readd with beta version uploaded on github ([41d2b1e](https://github.com/ForkbombEu/verifier/commit/41d2b1eeb3afaff4eb239d6b7bfb507b1e1ad38c))
+* workflows that run when main is updated ([b6e51ed](https://github.com/ForkbombEu/verifier/commit/b6e51ed87d1621fbf05a6725c46120aca7e0f7d1))
+
+
+### Features
+
+* update ios metadata ([866860e](https://github.com/ForkbombEu/verifier/commit/866860e71bc6631fabace648b4f0791bb7ee12b7))
+* workflow for verifier in production ([adb7896](https://github.com/ForkbombEu/verifier/commit/adb789694b16bf3cf53f9e0e25dbad6f6a08b6e4))
+
 # [1.23.0](https://github.com/ForkbombEu/verifier/compare/v1.22.0...v1.23.0) (2025-01-29)
 
 
