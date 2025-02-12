@@ -124,8 +124,8 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2
       '@didroom/components':
-        specifier: ^1.31.7
-        version: 1.31.7(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.2)))
+        specifier: ^1.32.3
+        version: 1.32.3(@capacitor/core@6.1.2)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.2)))
       '@inlang/paraglide-js':
         specifier: 1.2.5
         version: 1.2.5
@@ -841,6 +841,11 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
+  '@capacitor/clipboard@6.0.2':
+    resolution: {integrity: sha512-jQ6UeFra5NP58THNZNb7HtzOZU7cHsjgrbQGVuMTgsK1uTILZpNeh+pfqHbKggba6KaNh5DAsJvEVQGpIR1VBA==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+
   '@capacitor/core@6.1.2':
     resolution: {integrity: sha512-xFy1/4qLFLp5WCIzIhtwUuVNNoz36+V7/BzHmLqgVJcvotc4MMjswW/TshnPQaLLujEOaLkA4h8ZJ0uoK3ImGg==}
 
@@ -904,8 +909,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@didroom/components@1.31.7':
-    resolution: {integrity: sha512-97akpuR9LiyNb4dUjxngkmFlkqKhFZb09X899r7EeGkG2+FgkVVDjh1oUf3fJH8c77m5nGGlxfl1usOReTgdcg==}
+  '@didroom/components@1.32.3':
+    resolution: {integrity: sha512-wmUMjgHeqwvuTLRCAkbovARbKT0WcnoSFFExHPwsTXF53W2Vw8WQThEgd2KRcLVCqe92iO2G/hw7eG+GqTbX2g==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -6905,6 +6910,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@capacitor/clipboard@6.0.2(@capacitor/core@6.1.2)':
+    dependencies:
+      '@capacitor/core': 6.1.2
+
   '@capacitor/core@6.1.2':
     dependencies:
       tslib: 2.7.0
@@ -6963,13 +6972,15 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@didroom/components@1.31.7(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.2)))':
+  '@didroom/components@1.32.3(@capacitor/core@6.1.2)(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.2)))':
     dependencies:
+      '@capacitor/clipboard': 6.0.2(@capacitor/core@6.1.2)
       '@stencil/core': 4.22.0
       '@tailwindcss/line-clamp': 0.4.4(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.2)))
       ansi-to-html: 0.7.2
       did-resolver: 4.1.0
     transitivePeerDependencies:
+      - '@capacitor/core'
       - tailwindcss
 
   '@esbuild/aix-ppc64@0.21.5':

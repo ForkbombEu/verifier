@@ -3,19 +3,22 @@
 	import { filesUri } from '$lib/backendUri';
 
 	export let data;
-	const { verificationFlows } = data
+	const { verificationFlows } = data;
 </script>
 
 <d-tab-page tab="home" title="HOME">
-	<d-heading size="s">
-		{m.Verify_credential()}
-	</d-heading>
+	<d-vertical-stack gap={0}>
+		<d-heading size="s">
+			{m.Verify_credential()}
+		</d-heading>
+		<d-text size="s" class="pb-4">{m.lorem_ipsum()}</d-text>
+	</d-vertical-stack>
 	<d-vertical-stack>
 		{#each verificationFlows as vf}
 			<d-credential-service
 				href={r(`/${vf.id}/verify/`)}
 				name={vf.name}
-				logoSrc={filesUri(
+				logo-src={filesUri(
 					vf.expand.organization.avatar,
 					vf.expand.organization.collectionName,
 					vf.expand.organization.id
