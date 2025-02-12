@@ -40,12 +40,11 @@
 			(ev: any) => {
 				ev.detail.register(-1, () => {
 					if (isExitPoint()) App.exitApp();
-					else if (r('/unlock') === window.location.pathname) return;
 					else window.history.back();
 				});
 
 				const isExitPoint = () => {
-					const exitPoints = [r('/home'), r('/register-login')];
+					const exitPoints = [r('/home')];
 					return exitPoints.includes(window.location.pathname);
 				};
 			},
@@ -64,6 +63,14 @@
 	/>
 	<script type="module" src="/components/didroom-components/didroom-components.esm.js"></script>
 	<link rel="stylesheet" href="/components/didroom-components/didroom-components.css" />
+	<!-- <script 
+	 	type="module" 
+	 	src="http://localhost:3333/build/didroom-components.esm.js" 
+	 ></script> 
+	 <link 
+	 	rel="stylesheet" 
+	 	href="http://localhost:3333/build/didroom-components.css" 
+	 />  -->
 </svelte:head>
 
 <ParaglideJS {i18n}>
