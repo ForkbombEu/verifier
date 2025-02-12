@@ -11,7 +11,7 @@
 		<d-heading size="s">
 			{m.Verify_credential()}
 		</d-heading>
-		<d-text size="s" class="pb-8">{m.lorem_ipsum()}</d-text>
+		<d-text size="s" class="pb-4">{m.lorem_ipsum()}</d-text>
 	</d-vertical-stack>
 	<d-vertical-stack>
 		{#each verificationFlows as vf}
