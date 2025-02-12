@@ -1,4 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"Verify_credential": "Verifica credenziali"
+	"Verify_credential": "Verifica credenziali",
+	"Verifier": "Verifier"
 }

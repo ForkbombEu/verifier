@@ -95,10 +95,9 @@
 
 <d-header back-button on:backButtonClick={() => goto('/home')}>{m.VERIFICATION_QR()}</d-header>
 <ion-content fullscreen class="ion-padding">
-	<d-vertical-stack gap={4}>
+	<d-vertical-stack gap={4} class="items-center justify-center">
 		<d-vertical-stack class="justify-center text-center">
-			<d-text size="xl">Ask holders to scan this QR using their Wallet</d-text>
-			<d-horizontal-stack class="w-full items-center justify-center">
+			<d-horizontal-stack gap={4} class="w-full items-center">
 				<d-avatar
 					size="l"
 					name={verificationFlow.name}
@@ -109,19 +108,23 @@
 					)}
 					shape="square"
 				/>
-				<d-heading size="s">{verificationFlow.name}</d-heading>
+				<d-heading class="text-left line-clamp-2" size="xs">{verificationFlow.name}</d-heading>
 			</d-horizontal-stack>
-			<d-text size="l">{verificationFlow.expand.organization.name} </d-text>
+			<!-- <d-text size="l">{verificationFlow.expand.relying_party.name} </d-text> -->
 		</d-vertical-stack>
 		<!-- for web test no tok provided-->
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
 				<d-qr-code
+				class="mt-4"
 					{qr}
+					verifier-label={m.Verifier()}
+					relying-party={verificationFlow.expand.relying_party.name}
 					generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
 					generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
 					session-id={id}
 				/>
+
 				<d-button
 					color="accent"
 					expand
@@ -137,12 +140,13 @@
 				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
-			<d-qr-code
-				{qr}
-				generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
-				generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
-				session-id={id}
-			/>
+				<d-qr-code
+					{qr}
+					generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+					generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+					session-id={id}
+				/>
+
 			<d-button
 				color="accent"
 				expand

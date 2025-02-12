@@ -3,13 +3,16 @@
 	import { filesUri } from '$lib/backendUri';
 
 	export let data;
-	const { verificationFlows } = data
+	const { verificationFlows } = data;
 </script>
 
 <d-tab-page tab="home" title="HOME">
-	<d-heading size="s">
-		{m.Verify_credential()}
-	</d-heading>
+	<d-vertical-stack gap={0}>
+		<d-heading size="s">
+			{m.Verify_credential()}
+		</d-heading>
+		<d-text size="s" class="pb-8">lorem ipsum sic amet</d-text>
+	</d-vertical-stack>
 	<d-vertical-stack>
 		{#each verificationFlows as vf}
 			<d-credential-service

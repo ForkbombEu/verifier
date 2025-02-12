@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@capacitor/assets": "^3.0.5",
 		"@capacitor/cli": "^6.1.2",
-		"@didroom/components": "^1.31.7",
+		"@didroom/components": "^1.32.2",
 		"@inlang/paraglide-js": "1.2.5",
 		"@inlang/paraglide-js-adapter-sveltekit": "^0.4.1",
 		"@ionic/cli": "^7.2.0",
