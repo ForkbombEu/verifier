@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/ForkbombEu/verifier/compare/v1.25.0...v1.25.1) (2025-02-13)
+
+
+### Bug Fixes
+
+* screenshots with placeholders ([c883462](https://github.com/ForkbombEu/verifier/commit/c883462549ece88d36c3e0458ff99fa04ae33b03))
+
 # [1.25.0](https://github.com/ForkbombEu/verifier/compare/v1.24.0...v1.25.0) (2025-02-13)
 
 
