@@ -1,3 +1,18 @@
+# [1.25.0](https://github.com/ForkbombEu/verifier/compare/v1.24.0...v1.25.0) (2025-02-13)
+
+
+### Bug Fixes
+
+* add new string placeholder to home ([8ed3adc](https://github.com/ForkbombEu/verifier/commit/8ed3adcfe19f7c89e0b7e1f844b3d535ddea0548))
+* adjust spacing in home ([5cbc79f](https://github.com/ForkbombEu/verifier/commit/5cbc79f9e7591dc848819f5e76751b0a8c0d4ab4))
+* improve verification page ui ([4a9bd20](https://github.com/ForkbombEu/verifier/commit/4a9bd20870f5c67fe54198a884e45537275b9c8d))
+* in verification flow listsometimes disappear the logo ([152ceba](https://github.com/ForkbombEu/verifier/commit/152cebad78107c75411b11a189528cb85d2d20a1))
+
+
+### Features
+
+* add new languages (fr, de, es) ([746370a](https://github.com/ForkbombEu/verifier/commit/746370a2cad311e322ae9c8635f77497fe1310df))
+
 # [1.24.0](https://github.com/ForkbombEu/verifier/compare/v1.23.0...v1.24.0) (2025-02-12)
 
 
