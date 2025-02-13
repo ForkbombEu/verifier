@@ -7,7 +7,10 @@ export const i18n = createI18n(runtime, {
 	prefixDefaultLanguage: 'always',
 	textDirection: {
 		en: 'ltr',
-		it: 'ltr'
+		it: 'ltr',
+		fr: 'ltr',
+		de: 'ltr',
+		es: 'ltr'
 	}
 });
 
