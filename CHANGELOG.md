@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/ForkbombEu/verifier/compare/v1.25.2...v1.26.0) (2025-02-14)
+
+
+### Features
+
+* ios push notifications ([4e1f8ae](https://github.com/ForkbombEu/verifier/commit/4e1f8aef1e451a3ef942b8283dac6a4e3679b5d3))
+
 ## [1.25.2](https://github.com/ForkbombEu/verifier/compare/v1.25.1...v1.25.2) (2025-02-14)
 
 
