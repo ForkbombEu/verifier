@@ -1,3 +1,66 @@
+## [1.25.1](https://github.com/ForkbombEu/verifier/compare/v1.25.0...v1.25.1) (2025-02-13)
+
+
+### Bug Fixes
+
+* screenshots with placeholders ([c883462](https://github.com/ForkbombEu/verifier/commit/c883462549ece88d36c3e0458ff99fa04ae33b03))
+
+# [1.25.0](https://github.com/ForkbombEu/verifier/compare/v1.24.0...v1.25.0) (2025-02-13)
+
+
+### Bug Fixes
+
+* add new string placeholder to home ([8ed3adc](https://github.com/ForkbombEu/verifier/commit/8ed3adcfe19f7c89e0b7e1f844b3d535ddea0548))
+* adjust spacing in home ([5cbc79f](https://github.com/ForkbombEu/verifier/commit/5cbc79f9e7591dc848819f5e76751b0a8c0d4ab4))
+* improve verification page ui ([4a9bd20](https://github.com/ForkbombEu/verifier/commit/4a9bd20870f5c67fe54198a884e45537275b9c8d))
+* in verification flow listsometimes disappear the logo ([152ceba](https://github.com/ForkbombEu/verifier/commit/152cebad78107c75411b11a189528cb85d2d20a1))
+
+
+### Features
+
+* add new languages (fr, de, es) ([746370a](https://github.com/ForkbombEu/verifier/commit/746370a2cad311e322ae9c8635f77497fe1310df))
+
+# [1.24.0](https://github.com/ForkbombEu/verifier/compare/v1.23.0...v1.24.0) (2025-02-12)
+
+
+### Bug Fixes
+
+* add ITSAppUsesNonExemptEncryption key in ios info.plist ([37e0eff](https://github.com/ForkbombEu/verifier/commit/37e0eff8b9bda558401d5d2fe6976df0e5b0221d))
+* back button behavior was wrong ([600943e](https://github.com/ForkbombEu/verifier/commit/600943ebf8947baf95a57aa7c01a6b846457de5f))
+* broken link to privacy policy ([1d61604](https://github.com/ForkbombEu/verifier/commit/1d616041a420f70031a4f0bc7cfbaafa0130374a))
+* deliver only on iphone ([9e69b64](https://github.com/ForkbombEu/verifier/commit/9e69b64683e5101471ebc8584028e40babf82520))
+* semantic release was disabled, readd with beta version uploaded on github ([41d2b1e](https://github.com/ForkbombEu/verifier/commit/41d2b1eeb3afaff4eb239d6b7bfb507b1e1ad38c))
+* workflows that run when main is updated ([b6e51ed](https://github.com/ForkbombEu/verifier/commit/b6e51ed87d1621fbf05a6725c46120aca7e0f7d1))
+
+
+### Features
+
+* update ios metadata ([866860e](https://github.com/ForkbombEu/verifier/commit/866860e71bc6631fabace648b4f0791bb7ee12b7))
+* workflow for verifier in production ([adb7896](https://github.com/ForkbombEu/verifier/commit/adb789694b16bf3cf53f9e0e25dbad6f6a08b6e4))
+
+# [1.23.0](https://github.com/ForkbombEu/verifier/compare/v1.22.0...v1.23.0) (2025-01-29)
+
+
+### Features
+
+* release in app/play store with automation ([#101](https://github.com/ForkbombEu/verifier/issues/101)) ([81c2aa7](https://github.com/ForkbombEu/verifier/commit/81c2aa72f3ddb310d86595a54d7cc03e3a1728c8))
+
+# [1.22.0](https://github.com/ForkbombEu/verifier/compare/v1.21.11...v1.22.0) (2025-01-28)
+
+
+### Features
+
+* message if no internet connection ([#100](https://github.com/ForkbombEu/verifier/issues/100)) ([8677a69](https://github.com/ForkbombEu/verifier/commit/8677a692f2c1017731a0fd8631563c04f89020ab))
+
+## [1.21.11](https://github.com/ForkbombEu/verifier/compare/v1.21.10...v1.21.11) (2024-12-23)
+
+
+### Bug Fixes
+
+* change app launcer icon in android (was not complyant with android policy) ([c2fe1e2](https://github.com/ForkbombEu/verifier/commit/c2fe1e2299699e68e7159151d52042b887b5059f))
+* splash screens backgrounds ([b078566](https://github.com/ForkbombEu/verifier/commit/b0785660c5b8aa15c34c2893dfde1dff5e64fab3))
+* update android assets (splashs and icons) ([c7154fe](https://github.com/ForkbombEu/verifier/commit/c7154fead73b454aeefe8465d969d2b75acb0b27))
+
 ## [1.21.10](https://github.com/ForkbombEu/verifier/compare/v1.21.9...v1.21.10) (2024-10-16)
 
 

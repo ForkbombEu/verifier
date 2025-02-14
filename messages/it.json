@@ -1,4 +1,25 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"Verify_credential": "Verifica credenziali"
+	"Verify_credential": "Verifica credenziali",
+	"Generate_QR": "Genera QR",
+	"CREDENTIAL_DETAIL": "DETTAGLIO CREDENZIALI",
+	"Developed_by_Forkbomb": "Sviluppato da Forkbomb B.V.",
+	"No_activity_yet": "Nessuna attività ancora",
+	"Get_alerts_on_new_activities_and_keep_your_account_uptodate_": "Ricevi avvisi sulle nuove attività e mantieni aggiornato il tuo account.",
+	"NOTIFICATIONS_SETTINGS": "IMPOSTAZIONI NOTIFICHE",
+	"Account_Settings": "Impostazioni account",
+	"Security_and_Authentication": "Sicurezza e autenticazione",
+	"Notifications_Settings": "Impostazioni notifiche",
+	"Languages": "Lingue",
+	"Support": "Supporto",
+	"Privacy_Policy": "Politica sulla privacy",
+	"Log_Out": "Esci",
+	"Profile": "Profilo",
+	"Accept": "Accettare",
+	"Terms_and_Conditions": "Termini e Condizioni",
+	"You_must_accept_the_terms_and_conditions_to_continue": "Devi accettare i termini e le condizioni per continuare",
+	"It_seems_that_the_wallet_is_unable_to_connect_to_the_Internet_please_make_sure_your_internet_connection_is_working_and_retry": "Sembra che l'app non riesca a connettersi a Internet: assicurati che la tua connessione Internet funzioni e riprova",
+	"Close": "Vicino",
+	"Verifier": "Verifier",
+	"lorem_ipsum": "Di seguito è riportato un elenco di flussi di verifica, ognuno dei quali consente di verificare un tipo di credenziale. Per verificare una credenziale, mostra il codice QR prodotto nei flussi di verifica. "
 }

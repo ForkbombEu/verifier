@@ -70,7 +70,7 @@
 						<Checkbox fieldPath="conditions" {form}
 							>{m.Accept()}
 							<a
-								href="https://didroom.com/guides/7_terms-and-conditions/"
+								href="https://didroom.com/guides/Terms-and-conditions/privacy-policy.html"
 								class="text-accent underline"
 							>
 								{m.Terms_and_Conditions()}
