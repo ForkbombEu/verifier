@@ -1,3 +1,11 @@
+## [1.25.2](https://github.com/ForkbombEu/verifier/compare/v1.25.1...v1.25.2) (2025-02-14)
+
+
+### Bug Fixes
+
+* merge pull request [#113](https://github.com/ForkbombEu/verifier/issues/113) from ForkbombEu/update_google_services ([ecb1084](https://github.com/ForkbombEu/verifier/commit/ecb1084f02b3dba5423eef33598dab33dbcf87af))
+* update google service to match the correct firebase project ([352c141](https://github.com/ForkbombEu/verifier/commit/352c1415eab68b0f218e8195f81dcfe49b6f4778))
+
 ## [1.25.1](https://github.com/ForkbombEu/verifier/compare/v1.25.0...v1.25.1) (2025-02-13)
 
 
