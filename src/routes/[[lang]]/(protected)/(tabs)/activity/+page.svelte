@@ -22,8 +22,7 @@
 		{#if verifiedSids && verifiedSids.length > 0}
 			{#each verifiedSids.reverse() as verifiedSid}
 				<d-activity-card
-					name={verifiedSid.sid}
-					description={verifiedSid.success ? 'verified' : 'failure'}
+					message={`${verifiedSid.sid} ${verifiedSid.success ? 'verified' : 'failure'}`}
 					date={dayjs().to(dayjs.unix(verifiedSid.at))}
 				/>
 			{/each}
