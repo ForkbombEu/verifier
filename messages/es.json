@@ -3,5 +3,18 @@
 	"Verify_credential": "Verifica credencial",
 	"VERIFICATION_QR": "VERIFICACIÓN QR",
 	"Generate_QR": "Generar QR",
-	"CREDENTIAL_DETAIL": "DETALLE DE CREDENCIAL"
+	"CREDENTIAL_DETAIL": "DETALLE DE CREDENCIAL",
+	"VERIFIER": "VERIFICADOR",
+	"Developed_by_Forkbomb": "Desarrollado por Forkbomb BV",
+	"Badges": "Badges",
+	"No_activity_yet": "No hay actividad ",
+	"Get_alerts_on_new_activities_and_keep_your_account_uptodate_": "Recibe alertas sobre nuevas actividades.",
+	"NOTIFICATIONS_SETTINGS": "NOTIFICACIONES",
+	"Account_Settings": "Configuraciones de la cuenta",
+	"Security_and_Authentication": "Seguridad y autenticación",
+	"Notifications_Settings": "Configuración de notificaciones",
+	"Languages": "Idiomas",
+	"Support": "Soporte",
+	"Privacy_Policy": "política de privacidad",
+	"Log_Out": "Log Out"
 }
