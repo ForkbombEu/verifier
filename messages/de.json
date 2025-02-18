@@ -16,5 +16,13 @@
 	"Languages": "Sprachen",
 	"Support": "Kundensupport",
 	"Privacy_Policy": "Datenschutzrichtlinie",
-	"Log_Out": "Ausloggen"
+	"Log_Out": "Ausloggen",
+	"Profile": "Profil",
+	"Accept": "Akzeptieren",
+	"Terms_and_Conditions": "Geschäftsbedingungen",
+	"You_must_accept_the_terms_and_conditions_to_continue": "Sie müssen die Geschäftsbedingungen akzeptieren, um fortzufahren",
+	"It_seems_that_the_wallet_is_unable_to_connect_to_the_Internet_please_make_sure_your_internet_connection_is_working_and_retry": "Es scheint, dass die App keine Verbindung zum Internet herstellen kann: Bitte stellen Sie sicher, dass Ihre Internetverbindung funktioniert, und versuchen Sie es erneut.",
+	"Close": "Schließen",
+	"Verifier": "Verifier",
+	"lorem_ipsum": "Nachfolgend finden Sie eine Liste mit Verifizierungsabläufen, mit denen Sie jeweils einen Credential verifizieren können. Um eine Credential zu verifizieren, zeigen Sie den QR-Code an, der in den Verifizierungsabläufen erstellt wird. "
 }
