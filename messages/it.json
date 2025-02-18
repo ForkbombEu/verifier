@@ -1,6 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"Verify_credential": "Verifica credenziali",
+	"Verify_credential": "Verifica credenziale",
+	"VERIFICATION_QR": "VERIFICA QR",
 	"Generate_QR": "Genera QR",
 	"CREDENTIAL_DETAIL": "DETTAGLIO CREDENZIALI",
 	"Developed_by_Forkbomb": "Sviluppato da Forkbomb B.V.",
