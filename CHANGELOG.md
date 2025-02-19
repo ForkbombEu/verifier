@@ -1,3 +1,25 @@
+## [1.26.1](https://github.com/ForkbombEu/verifier/compare/v1.26.0...v1.26.1) (2025-02-19)
+
+
+### Bug Fixes
+
+* app details in login page ([#115](https://github.com/ForkbombEu/verifier/issues/115)) ([ac9aed4](https://github.com/ForkbombEu/verifier/commit/ac9aed41bab9466f407f25118f758654a2fb3c80))
+
+# [1.26.0](https://github.com/ForkbombEu/verifier/compare/v1.25.2...v1.26.0) (2025-02-14)
+
+
+### Features
+
+* ios push notifications ([4e1f8ae](https://github.com/ForkbombEu/verifier/commit/4e1f8aef1e451a3ef942b8283dac6a4e3679b5d3))
+
+## [1.25.2](https://github.com/ForkbombEu/verifier/compare/v1.25.1...v1.25.2) (2025-02-14)
+
+
+### Bug Fixes
+
+* merge pull request [#113](https://github.com/ForkbombEu/verifier/issues/113) from ForkbombEu/update_google_services ([ecb1084](https://github.com/ForkbombEu/verifier/commit/ecb1084f02b3dba5423eef33598dab33dbcf87af))
+* update google service to match the correct firebase project ([352c141](https://github.com/ForkbombEu/verifier/commit/352c1415eab68b0f218e8195f81dcfe49b6f4778))
+
 ## [1.25.1](https://github.com/ForkbombEu/verifier/compare/v1.25.0...v1.25.1) (2025-02-13)
 
 

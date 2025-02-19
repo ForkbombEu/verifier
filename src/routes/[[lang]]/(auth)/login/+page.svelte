@@ -84,5 +84,5 @@
 			</div>
 		</div>
 	</div>
-	<d-app-details developedBy={m.Developed_by_Forkbomb()} {version} />
+	<d-app-details developed-by={m.Developed_by_Forkbomb()} {version} />
 </div>

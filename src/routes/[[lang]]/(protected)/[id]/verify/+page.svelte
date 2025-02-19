@@ -108,7 +108,7 @@
 					)}
 					shape="square"
 				/>
-				<d-heading class="text-left line-clamp-2" size="xs">{verificationFlow.name}</d-heading>
+				<d-heading class="line-clamp-2 text-left" size="xs">{verificationFlow.name}</d-heading>
 			</d-horizontal-stack>
 			<!-- <d-text size="l">{verificationFlow.expand.relying_party.name} </d-text> -->
 		</d-vertical-stack>
@@ -116,7 +116,7 @@
 		{#if Capacitor.getPlatform() == 'web'}
 			{#await registerQr('fcm registration token is not available in web') then qr}
 				<d-qr-code
-				class="mt-4"
+					class="mt-4"
 					{qr}
 					verifier-label={m.Verifier()}
 					relying-party={verificationFlow.expand.relying_party.name}
@@ -140,12 +140,15 @@
 				text={'Please allow the app to receive push notifications in order to proceed.'}
 			/>
 		{:else if qr}
-				<d-qr-code
-					{qr}
-					generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
-					generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
-					session-id={id}
-				/>
+			<d-qr-code
+				class="mt-4"
+				verifier-label={m.Verifier()}
+				relying-party={verificationFlow.expand.relying_party.name}
+				{qr}
+				generation-date="{generationDate.day()}/{generationDate.month()}/{generationDate.year()}"
+				generation-hour="{generationDate.hour()}:{generationDate.minute()}:{generationDate.second()}"
+				session-id={id}
+			/>
 
 			<d-button
 				color="accent"
