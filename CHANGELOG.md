@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/ForkbombEu/verifier/compare/v1.26.0...v1.26.1) (2025-02-19)
+
+
+### Bug Fixes
+
+* app details in login page ([#115](https://github.com/ForkbombEu/verifier/issues/115)) ([ac9aed4](https://github.com/ForkbombEu/verifier/commit/ac9aed41bab9466f407f25118f758654a2fb3c80))
+
 # [1.26.0](https://github.com/ForkbombEu/verifier/compare/v1.25.2...v1.26.0) (2025-02-14)
 
 
