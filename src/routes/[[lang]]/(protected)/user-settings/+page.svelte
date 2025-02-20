@@ -32,7 +32,6 @@
 				const slangroom = new Slangroom(pocketbase);
 				const record: Record<string, any> = {};
 				record.name = form.data.name;
-				console.log(form.data.avatar);
 				record.avatar = form.data.avatar;
 				const data = {
 					pb_address: backendUri,
