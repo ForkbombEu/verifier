@@ -1,3 +1,10 @@
+## [1.26.2](https://github.com/ForkbombEu/verifier/compare/v1.26.1...v1.26.2) (2025-02-20)
+
+
+### Bug Fixes
+
+* use new activitiy list items ([#114](https://github.com/ForkbombEu/verifier/issues/114)) ([3f6ae11](https://github.com/ForkbombEu/verifier/commit/3f6ae11edb12f14c891ea0f5ddea628e4ff10316))
+
 ## [1.26.1](https://github.com/ForkbombEu/verifier/compare/v1.26.0...v1.26.1) (2025-02-19)
 
 
