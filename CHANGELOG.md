@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/ForkbombEu/verifier/compare/v1.26.2...v1.27.0) (2025-02-21)
+
+
+### Features
+
+* new user settings page ([#119](https://github.com/ForkbombEu/verifier/issues/119)) ([49328c4](https://github.com/ForkbombEu/verifier/commit/49328c4dc70de7085fca5f291930f91aad18fc3e))
+
 ## [1.26.2](https://github.com/ForkbombEu/verifier/compare/v1.26.1...v1.26.2) (2025-02-20)
 
 
