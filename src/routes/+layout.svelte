@@ -17,6 +17,7 @@
 	import { App } from '@capacitor/app';
 	import { Network } from '@capacitor/network';
 	import FingerPrint from '$lib/assets/lottieFingerPrint/FingerPrint.svelte';
+	import { refreshAuth } from '$lib/slangroom/login';
 
 	const controller = new AbortController();
 	const signal = controller.signal;
@@ -31,6 +32,7 @@
 	let isConnected: boolean;
 
 	onMount(async () => {
+		await refreshAuth();
 		isConnected = (await Network.getStatus()).connected;
 		Network.addListener('networkStatusChange', (status) => {
 			isConnected = status.connected;
